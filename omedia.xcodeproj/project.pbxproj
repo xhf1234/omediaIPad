@@ -53,6 +53,8 @@
 		FE23BAA6141F7391003C4F5E /* BaseFormModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseFormModel.m; path = model/formModel/BaseFormModel.m; sourceTree = "<group>"; };
 		FE23BAC1141F7CAE003C4F5E /* LoginForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginForm.h; path = model/formModel/LoginForm.h; sourceTree = "<group>"; };
 		FE23BAC2141F7CAE003C4F5E /* LoginForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginForm.m; path = model/formModel/LoginForm.m; sourceTree = "<group>"; };
+		FE258143141FBA4500F890F7 /* ProFormToData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProFormToData.h; path = model/formModel/ProFormToData.h; sourceTree = "<group>"; };
+		FE25819C141FBDD200F890F7 /* ProValidateForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProValidateForm.h; path = model/formModel/ProValidateForm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,8 @@
 				FE23BAA3141F733A003C4F5E /* RegisterForm.m */,
 				FE23BAC1141F7CAE003C4F5E /* LoginForm.h */,
 				FE23BAC2141F7CAE003C4F5E /* LoginForm.m */,
+				FE258143141FBA4500F890F7 /* ProFormToData.h */,
+				FE25819C141FBDD200F890F7 /* ProValidateForm.h */,
 			);
 			name = formModel;
 			sourceTree = "<group>";

@@ -7,9 +7,21 @@
 //
 
 #import "LoginForm.h"
-
+#import "Account.h"
 
 @implementation LoginForm
+
+-(BaseDataModel*) toDataModel {
+	Account* account = [[Account alloc]init];
+	account.username = self.username;
+	account.password = self.password;
+	return account;
+}
+
+-(BOOL) validate {
+	//TODO
+	return NO;
+}
 
 @synthesize username;
 @synthesize password;

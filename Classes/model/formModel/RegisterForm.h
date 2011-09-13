@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseFormModel.h"
+#import "ProFormToData.h"
+#import "ProValidateForm.h"
 
-@interface RegisterForm : BaseFormModel {
+@interface RegisterForm : BaseFormModel <ProFormToData, ProValidateForm>{
 	NSString* username;
 	NSString* password;
 	NSString* confirmPassword;

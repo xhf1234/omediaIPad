@@ -13,10 +13,12 @@
 @implementation AccountService
 
 -(int) regester:(RegisterForm*)form {
+	//TODO
 	return 0;
 }
 
 -(int) login:(LoginForm *)form {
+	//TODO
 	return 0;
 }
 

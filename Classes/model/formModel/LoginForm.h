@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseFormModel.h"
+#import "ProFormToData.h"
+#import "ProValidateForm.h"
 
-
-@interface LoginForm : NSObject {
+@interface LoginForm : BaseFormModel <ProFormToData, ProValidateForm> {
 	NSString* username;
 	NSString* password;
 }
