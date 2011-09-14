@@ -18,6 +18,12 @@
 	return account;
 }
 
+-(void) dealloc {
+	[username release];
+	[password release];
+	[super dealloc];
+}
+
 -(BOOL) validate {
 	//TODO
 	return NO;

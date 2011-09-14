@@ -15,6 +15,8 @@
 	NSString* email;
 }
 
+-(void) dealloc;
+
 @property(nonatomic, retain) NSString* username;
 @property(nonatomic, retain) NSString* password;
 @property(nonatomic, retain) NSString* email;

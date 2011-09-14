@@ -24,6 +24,14 @@
 	return NO;
 }
 
+-(void) dealloc {
+	[username release];
+	[password release];
+	[confirmPassword release];
+	[email release];
+	[super dealloc];
+}
+
 @synthesize username;
 @synthesize password;
 @synthesize confirmPassword;

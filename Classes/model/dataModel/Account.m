@@ -11,6 +11,13 @@
 
 @implementation Account
 
+-(void) dealloc {
+	[username release];
+	[password release];
+	[email release];
+	[super dealloc];
+}
+
 @synthesize username;
 @synthesize password;
 @synthesize email;
