@@ -12,7 +12,11 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		FE13CE6814233DD000795A0B /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE13CE6614233DD000795A0B /* LoginController.m */; };
+		FE13CEA0142341F400795A0B /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9D142341F400795A0B /* RegisterController.xib */; };
+		FE13CEA1142341F400795A0B /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9E142341F400795A0B /* LoginController.xib */; };
+		FE13CEA2142341F400795A0B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9F142341F400795A0B /* MainWindow.xib */; };
+		FE13CEA51423420700795A0B /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE13CEA31423420700795A0B /* RegisterController.m */; };
 		FE1CAB4B141F52D900C022AA /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1CAB4A141F52D900C022AA /* BaseService.m */; };
 		FE1CAB4E141F531600C022AA /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1CAB4D141F531600C022AA /* BaseController.m */; };
 		FE1CAB53141F534A00C022AA /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1CAB52141F534A00C022AA /* BaseModel.m */; };
@@ -31,10 +35,16 @@
 		1D6058910D05DD3D006BFB54 /* omedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = omedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* omedia_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = omedia_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* omedia-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "omedia-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		FE13CE6514233DD000795A0B /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = controller/LoginController.h; sourceTree = "<group>"; };
+		FE13CE6614233DD000795A0B /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = controller/LoginController.m; sourceTree = "<group>"; };
+		FE13CE9D142341F400795A0B /* RegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RegisterController.xib; path = ui/RegisterController.xib; sourceTree = "<group>"; };
+		FE13CE9E142341F400795A0B /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginController.xib; path = ui/LoginController.xib; sourceTree = "<group>"; };
+		FE13CE9F142341F400795A0B /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ui/MainWindow.xib; sourceTree = "<group>"; };
+		FE13CEA31423420700795A0B /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterController.m; path = controller/RegisterController.m; sourceTree = "<group>"; };
+		FE13CEA41423420700795A0B /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterController.h; path = controller/RegisterController.h; sourceTree = "<group>"; };
 		FE1CAB49141F52D900C022AA /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseService.h; path = service/BaseService.h; sourceTree = "<group>"; };
 		FE1CAB4A141F52D900C022AA /* BaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseService.m; path = service/BaseService.m; sourceTree = "<group>"; };
 		FE1CAB4C141F531600C022AA /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseController.h; path = controller/BaseController.h; sourceTree = "<group>"; };
@@ -94,6 +104,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				FE13CE9C142341E300795A0B /* ui */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -115,7 +126,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* omedia-Info.plist */,
 			);
 			name = Resources;
@@ -129,6 +139,16 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE13CE9C142341E300795A0B /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				FE13CE9D142341F400795A0B /* RegisterController.xib */,
+				FE13CE9E142341F400795A0B /* LoginController.xib */,
+				FE13CE9F142341F400795A0B /* MainWindow.xib */,
+			);
+			name = ui;
 			sourceTree = "<group>";
 		};
 		FE1CAB46141F528200C022AA /* service */ = {
@@ -145,8 +165,12 @@
 		FE1CAB47141F528B00C022AA /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FE13CEA31423420700795A0B /* RegisterController.m */,
+				FE13CEA41423420700795A0B /* RegisterController.h */,
 				FE1CAB4C141F531600C022AA /* BaseController.h */,
 				FE1CAB4D141F531600C022AA /* BaseController.m */,
+				FE13CE6514233DD000795A0B /* LoginController.h */,
+				FE13CE6614233DD000795A0B /* LoginController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -237,7 +261,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				FE13CEA0142341F400795A0B /* RegisterController.xib in Resources */,
+				FE13CEA1142341F400795A0B /* LoginController.xib in Resources */,
+				FE13CEA2142341F400795A0B /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +285,8 @@
 				FE23BAA4141F733A003C4F5E /* RegisterForm.m in Sources */,
 				FE23BAA7141F7391003C4F5E /* BaseFormModel.m in Sources */,
 				FE23BAC3141F7CAE003C4F5E /* LoginForm.m in Sources */,
+				FE13CE6814233DD000795A0B /* LoginController.m in Sources */,
+				FE13CEA51423420700795A0B /* RegisterController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

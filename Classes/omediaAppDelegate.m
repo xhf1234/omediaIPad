@@ -7,6 +7,7 @@
 //
 
 #import "omediaAppDelegate.h"
+#import "LoginController.h"
 
 @implementation omediaAppDelegate
 
@@ -18,8 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
+	navController = [[UINavigationController alloc] init];
+	
+	LoginController* loginController = [[LoginController alloc] init];
+	loginController.title = @"登陆";
+	[navController pushViewController:loginController animated:NO];
+	[loginController release];
+	
     // Override point for customization after application launch.
-    
+    [window addSubview:navController.view];
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -59,6 +67,7 @@
 
 
 - (void)dealloc {
+	[navController release];
     [window release];
     [super dealloc];
 }

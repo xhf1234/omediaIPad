@@ -6,11 +6,15 @@
 //  Copyright 2011 THU. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-
-@interface BaseController : NSObject {
+@interface BaseController : UIViewController {
 
 }
+
+//导航返回
+- (void) back;
+//改变返回按钮的标题
+- (void) changeBackTitle:(NSString*)title;
 
 @end
