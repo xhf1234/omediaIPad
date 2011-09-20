@@ -16,9 +16,19 @@
 }
 
 - (void) changeBackTitle:(NSString *)title {
-	UIBarButtonItem* back = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(back)];
-    self.navigationItem.leftBarButtonItem = back;
+	UIBarButtonItem* back = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.backBarButtonItem = back;
 	[back release];
+}
+
+-(void) showAlert:(NSString*)message buttonLabel:(NSString*)buttonLabel {
+	UIAlertView *alertDialog = [[UIAlertView alloc] initWithTitle:nil 
+														  message:message
+														 delegate:nil
+												cancelButtonTitle:buttonLabel
+												otherButtonTitles:nil];
+    [alertDialog show];
+    [alertDialog release];
 }
 
 @end

@@ -11,6 +11,7 @@
 //对一个FormModel进行前端的验证
 @protocol ProValidateForm
 
--(BOOL) validate;
+//验证失败返回提示信息  否则返回nil
+-(NSString*) validate;
 
 @end

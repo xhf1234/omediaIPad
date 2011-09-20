@@ -25,9 +25,9 @@
 	[super dealloc];
 }
 
--(BOOL) validate {
+-(NSString *) validate {
 	//TODO
-	return NO;
+	return nil;
 }
 
 @synthesize username;

@@ -19,11 +19,11 @@
 //注册一个账户
 //成功返回1
 //用户名已存在返回0
--(int) regester:(RegisterForm*)form;
++(int) regester:(RegisterForm*)form;
 
 //登陆
 //成功返回1
 //失败返回0
--(int) login:(LoginForm*)form;
++(int) login:(LoginForm*)form;
 
 @end

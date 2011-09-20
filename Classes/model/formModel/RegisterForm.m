@@ -20,9 +20,9 @@
 	return account;
 }
 
--(BOOL) validate {
+-(NSString*) validate {
 	//TODO
-	return NO;
+	return nil;
 }
 
 -(void) dealloc {

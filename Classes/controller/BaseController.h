@@ -16,5 +16,7 @@
 - (void) back;
 //改变返回按钮的标题
 - (void) changeBackTitle:(NSString*)title;
+//显示alert
+-(void) showAlert:(NSString*)message buttonLabel:(NSString*)buttonLabel;
 
 @end
