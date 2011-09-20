@@ -28,6 +28,7 @@
 		FE23BAA4141F733A003C4F5E /* RegisterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAA3141F733A003C4F5E /* RegisterForm.m */; };
 		FE23BAA7141F7391003C4F5E /* BaseFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAA6141F7391003C4F5E /* BaseFormModel.m */; };
 		FE23BAC3141F7CAE003C4F5E /* LoginForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAC2141F7CAE003C4F5E /* LoginForm.m */; };
+		FE616DC314288E9B00477CB1 /* FormValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE616DC214288E9B00477CB1 /* FormValidator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,8 @@
 		FE23BAC2141F7CAE003C4F5E /* LoginForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginForm.m; path = model/formModel/LoginForm.m; sourceTree = "<group>"; };
 		FE258143141FBA4500F890F7 /* ProFormToData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProFormToData.h; path = model/formModel/ProFormToData.h; sourceTree = "<group>"; };
 		FE25819C141FBDD200F890F7 /* ProValidateForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProValidateForm.h; path = model/formModel/ProValidateForm.h; sourceTree = "<group>"; };
+		FE616DC114288E9B00477CB1 /* FormValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormValidator.h; path = model/formModel/FormValidator.h; sourceTree = "<group>"; };
+		FE616DC214288E9B00477CB1 /* FormValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormValidator.m; path = model/formModel/FormValidator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				FE23BAC2141F7CAE003C4F5E /* LoginForm.m */,
 				FE258143141FBA4500F890F7 /* ProFormToData.h */,
 				FE25819C141FBDD200F890F7 /* ProValidateForm.h */,
+				FE616DC114288E9B00477CB1 /* FormValidator.h */,
+				FE616DC214288E9B00477CB1 /* FormValidator.m */,
 			);
 			name = formModel;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				FE13CE6814233DD000795A0B /* LoginController.m in Sources */,
 				FE13CEA51423420700795A0B /* RegisterController.m in Sources */,
 				FE0248AD142838D400465F02 /* AccountController.m in Sources */,
+				FE616DC314288E9B00477CB1 /* FormValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

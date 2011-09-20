@@ -10,7 +10,12 @@
 #import "BaseController.h"
 
 @interface RegisterController : BaseController {
-
+    IBOutlet UITextField *confirmPassword;
+    IBOutlet UITextField *email;
+    IBOutlet UITextField *password;
+    IBOutlet UITextField *username;
 }
+
+-(IBAction) actionRegister;
 
 @end

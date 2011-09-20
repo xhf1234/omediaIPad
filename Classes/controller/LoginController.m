@@ -26,26 +26,24 @@
 	form.username = username.text;
 	form.password = password.text;
 	NSString* validateMsg = [form validate];
-	[validateMsg retain];
 	if (validateMsg !=nil) {//前端验证失败
 		[self showAlert:validateMsg buttonLabel:@"确定"];
+		[form release];
 		return;
 	}
 	int r = [AccountService login:form];
+	[form release];
 	if (r==0) {//账号或密码错误
 		[self showAlert:@"账号或密码错误" buttonLabel:@"确定"];
 		return;
 	}
 	UITabBarController* tabController = [[UITabBarController alloc] init];
-	
 	AccountController* accountController = [[AccountController alloc]init];
 	tabController.viewControllers = [NSArray arrayWithObjects: accountController, nil];
 	[accountController release];
 	[self changeBackTitle:@"退出"];
 	[self.navigationController pushViewController:tabController animated:YES];
-	
-	[form autorelease];
-	[validateMsg release];
+	[tabController release];
 }
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -89,6 +87,8 @@
 
 
 - (void)dealloc {
+	[username release];
+	[password release];
     [super dealloc];
 }
 

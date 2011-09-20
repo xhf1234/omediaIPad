@@ -8,7 +8,6 @@
 
 #import "BaseFormModel.h"
 
-
 @implementation BaseFormModel
 
 @end

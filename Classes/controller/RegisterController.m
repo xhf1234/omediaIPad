@@ -7,9 +7,22 @@
 //
 
 #import "RegisterController.h"
+#import "RegisterForm.h"
 
 
 @implementation RegisterController
+
+-(IBAction) actionRegister {
+	RegisterForm* form = [[RegisterForm alloc] init];
+	form.username = username.text;
+	form.password = password.text;
+	form.confirmPassword = confirmPassword.text;
+	form.email = email.text;
+	NSString* validateMsg = [form validate];
+	if (validateMsg != nil) {
+		[self showAlert:validateMsg buttonLabel:@"确定"];
+	}
+}
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -51,6 +64,10 @@
 
 
 - (void)dealloc {
+	[username release];
+	[password release];
+	[confirmPassword release];
+	[email release];
     [super dealloc];
 }
 

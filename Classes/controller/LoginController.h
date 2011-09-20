@@ -10,8 +10,8 @@
 #import "BaseController.h"
 
 @interface LoginController : BaseController {
-	IBOutlet UITextField* username;
-	IBOutlet UITextField* password;
+    IBOutlet UITextField *password;
+    IBOutlet UITextField *username;
 }
 
 -(IBAction) actionLogin:(id)sender;
