@@ -12,6 +12,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		FE0248AD142838D400465F02 /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0248AB142838D400465F02 /* AccountController.m */; };
+		FE0248B61428390700465F02 /* AccountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0248B51428390700465F02 /* AccountController.xib */; };
 		FE13CE6814233DD000795A0B /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE13CE6614233DD000795A0B /* LoginController.m */; };
 		FE13CEA0142341F400795A0B /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9D142341F400795A0B /* RegisterController.xib */; };
 		FE13CEA1142341F400795A0B /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9E142341F400795A0B /* LoginController.xib */; };
@@ -38,6 +40,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* omedia_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = omedia_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* omedia-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "omedia-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		FE0248AA142838D400465F02 /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountController.h; path = controller/AccountController.h; sourceTree = "<group>"; };
+		FE0248AB142838D400465F02 /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountController.m; path = controller/AccountController.m; sourceTree = "<group>"; };
+		FE0248B51428390700465F02 /* AccountController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AccountController.xib; path = ui/AccountController.xib; sourceTree = "<group>"; };
 		FE13CE6514233DD000795A0B /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = controller/LoginController.h; sourceTree = "<group>"; };
 		FE13CE6614233DD000795A0B /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = controller/LoginController.m; sourceTree = "<group>"; };
 		FE13CE9D142341F400795A0B /* RegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RegisterController.xib; path = ui/RegisterController.xib; sourceTree = "<group>"; };
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				FE13CE9D142341F400795A0B /* RegisterController.xib */,
+				FE0248B51428390700465F02 /* AccountController.xib */,
 				FE13CE9E142341F400795A0B /* LoginController.xib */,
 				FE13CE9F142341F400795A0B /* MainWindow.xib */,
 			);
@@ -171,6 +177,8 @@
 				FE1CAB4D141F531600C022AA /* BaseController.m */,
 				FE13CE6514233DD000795A0B /* LoginController.h */,
 				FE13CE6614233DD000795A0B /* LoginController.m */,
+				FE0248AA142838D400465F02 /* AccountController.h */,
+				FE0248AB142838D400465F02 /* AccountController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 				FE13CEA0142341F400795A0B /* RegisterController.xib in Resources */,
 				FE13CEA1142341F400795A0B /* LoginController.xib in Resources */,
 				FE13CEA2142341F400795A0B /* MainWindow.xib in Resources */,
+				FE0248B61428390700465F02 /* AccountController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +296,7 @@
 				FE23BAC3141F7CAE003C4F5E /* LoginForm.m in Sources */,
 				FE13CE6814233DD000795A0B /* LoginController.m in Sources */,
 				FE13CEA51423420700795A0B /* RegisterController.m in Sources */,
+				FE0248AD142838D400465F02 /* AccountController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

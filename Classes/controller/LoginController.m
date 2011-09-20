@@ -10,6 +10,7 @@
 #import "RegisterController.h"
 #import "LoginForm.h"
 #import "AccountService.h"
+#import "AccountController.h"
 
 @implementation LoginController
 
@@ -36,15 +37,12 @@
 		return;
 	}
 	UITabBarController* tabController = [[UITabBarController alloc] init];
-	UIViewController* v1 = [[UIViewController alloc] init];
-	UIViewController* v2 = [[UIViewController alloc] init];
-	tabController.viewControllers = [NSArray arrayWithObjects:v1, v2, nil];
-	[v1 release];
-	[v2 release];
-	tabController.navigationItem.title = @"主菜单";
+	
+	AccountController* accountController = [[AccountController alloc]init];
+	tabController.viewControllers = [NSArray arrayWithObjects: accountController, nil];
+	[accountController release];
 	[self changeBackTitle:@"退出"];
 	[self.navigationController pushViewController:tabController animated:YES];
-	
 	
 	[form autorelease];
 	[validateMsg release];
