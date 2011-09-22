@@ -19,6 +19,7 @@
 		FE13CEA1142341F400795A0B /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9E142341F400795A0B /* LoginController.xib */; };
 		FE13CEA2142341F400795A0B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9F142341F400795A0B /* MainWindow.xib */; };
 		FE13CEA51423420700795A0B /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE13CEA31423420700795A0B /* RegisterController.m */; };
+		FE161D771428BC4500724EEC /* HttpService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE161D761428BC4500724EEC /* HttpService.m */; };
 		FE1CAB4B141F52D900C022AA /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1CAB4A141F52D900C022AA /* BaseService.m */; };
 		FE1CAB4E141F531600C022AA /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1CAB4D141F531600C022AA /* BaseController.m */; };
 		FE1CAB53141F534A00C022AA /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1CAB52141F534A00C022AA /* BaseModel.m */; };
@@ -28,6 +29,7 @@
 		FE23BAA4141F733A003C4F5E /* RegisterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAA3141F733A003C4F5E /* RegisterForm.m */; };
 		FE23BAA7141F7391003C4F5E /* BaseFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAA6141F7391003C4F5E /* BaseFormModel.m */; };
 		FE23BAC3141F7CAE003C4F5E /* LoginForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAC2141F7CAE003C4F5E /* LoginForm.m */; };
+		FE45D473142B56E6004B0097 /* SinaService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE45D472142B56E6004B0097 /* SinaService.m */; };
 		FE616DC314288E9B00477CB1 /* FormValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE616DC214288E9B00477CB1 /* FormValidator.m */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		FE13CE9F142341F400795A0B /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ui/MainWindow.xib; sourceTree = "<group>"; };
 		FE13CEA31423420700795A0B /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterController.m; path = controller/RegisterController.m; sourceTree = "<group>"; };
 		FE13CEA41423420700795A0B /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterController.h; path = controller/RegisterController.h; sourceTree = "<group>"; };
+		FE161D751428BC4500724EEC /* HttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpService.h; path = service/network/HttpService.h; sourceTree = "<group>"; };
+		FE161D761428BC4500724EEC /* HttpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpService.m; path = service/network/HttpService.m; sourceTree = "<group>"; };
 		FE1CAB49141F52D900C022AA /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseService.h; path = service/BaseService.h; sourceTree = "<group>"; };
 		FE1CAB4A141F52D900C022AA /* BaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseService.m; path = service/BaseService.m; sourceTree = "<group>"; };
 		FE1CAB4C141F531600C022AA /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseController.h; path = controller/BaseController.h; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 		FE23BAC2141F7CAE003C4F5E /* LoginForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginForm.m; path = model/formModel/LoginForm.m; sourceTree = "<group>"; };
 		FE258143141FBA4500F890F7 /* ProFormToData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProFormToData.h; path = model/formModel/ProFormToData.h; sourceTree = "<group>"; };
 		FE25819C141FBDD200F890F7 /* ProValidateForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProValidateForm.h; path = model/formModel/ProValidateForm.h; sourceTree = "<group>"; };
+		FE45D471142B56E6004B0097 /* SinaService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SinaService.h; path = service/thirdParty/SinaService.h; sourceTree = "<group>"; };
+		FE45D472142B56E6004B0097 /* SinaService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SinaService.m; path = service/thirdParty/SinaService.m; sourceTree = "<group>"; };
 		FE616DC114288E9B00477CB1 /* FormValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormValidator.h; path = model/formModel/FormValidator.h; sourceTree = "<group>"; };
 		FE616DC214288E9B00477CB1 /* FormValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormValidator.m; path = model/formModel/FormValidator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,9 +166,20 @@
 			name = ui;
 			sourceTree = "<group>";
 		};
+		FE161D741428BC2000724EEC /* network */ = {
+			isa = PBXGroup;
+			children = (
+				FE161D751428BC4500724EEC /* HttpService.h */,
+				FE161D761428BC4500724EEC /* HttpService.m */,
+			);
+			name = network;
+			sourceTree = "<group>";
+		};
 		FE1CAB46141F528200C022AA /* service */ = {
 			isa = PBXGroup;
 			children = (
+				FE45D470142B56A9004B0097 /* thirdParty */,
+				FE161D741428BC2000724EEC /* network */,
 				FE23BA84141F6FAC003C4F5E /* AccountService.h */,
 				FE23BA85141F6FAC003C4F5E /* AccountService.m */,
 				FE1CAB49141F52D900C022AA /* BaseService.h */,
@@ -223,6 +240,15 @@
 				FE23BAA0141F70B7003C4F5E /* Account.m */,
 			);
 			name = dataModel;
+			sourceTree = "<group>";
+		};
+		FE45D470142B56A9004B0097 /* thirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				FE45D471142B56E6004B0097 /* SinaService.h */,
+				FE45D472142B56E6004B0097 /* SinaService.m */,
+			);
+			name = thirdParty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +329,8 @@
 				FE13CEA51423420700795A0B /* RegisterController.m in Sources */,
 				FE0248AD142838D400465F02 /* AccountController.m in Sources */,
 				FE616DC314288E9B00477CB1 /* FormValidator.m in Sources */,
+				FE161D771428BC4500724EEC /* HttpService.m in Sources */,
+				FE45D473142B56E6004B0097 /* SinaService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
