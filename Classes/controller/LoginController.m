@@ -31,7 +31,7 @@
 		[form release];
 		return;
 	}
-	int r = [AccountService login:form];
+	int r = [accountService login:form];
 	[form release];
 	if (r==0) {//账号或密码错误
 		[self showAlert:@"账号或密码错误" buttonLabel:@"确定"];
@@ -44,6 +44,20 @@
 	[self changeBackTitle:@"退出"];
 	[self.navigationController pushViewController:tabController animated:YES];
 	[tabController release];
+}
+
+-(id) init {
+	self = [super init];
+	if(self) {
+		accountService = [[AccountService alloc] initWithOwnerController:self];
+	}
+	return self;
+}
+
+-(void) dealloc {
+	[username release];
+	[password release];
+	[super dealloc];
 }
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -85,12 +99,6 @@
     // e.g. self.myOutlet = nil;
 }
 
-
-- (void)dealloc {
-	[username release];
-	[password release];
-    [super dealloc];
-}
 
 
 @end

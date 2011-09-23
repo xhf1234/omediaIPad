@@ -14,6 +14,7 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		FE0248AD142838D400465F02 /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0248AB142838D400465F02 /* AccountController.m */; };
 		FE0248B61428390700465F02 /* AccountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0248B51428390700465F02 /* AccountController.xib */; };
+		FE056070142C67B1001FC8E0 /* HttpConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */; };
 		FE13CE6814233DD000795A0B /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE13CE6614233DD000795A0B /* LoginController.m */; };
 		FE13CEA0142341F400795A0B /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9D142341F400795A0B /* RegisterController.xib */; };
 		FE13CEA1142341F400795A0B /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9E142341F400795A0B /* LoginController.xib */; };
@@ -46,6 +47,8 @@
 		FE0248AA142838D400465F02 /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountController.h; path = controller/AccountController.h; sourceTree = "<group>"; };
 		FE0248AB142838D400465F02 /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountController.m; path = controller/AccountController.m; sourceTree = "<group>"; };
 		FE0248B51428390700465F02 /* AccountController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AccountController.xib; path = ui/AccountController.xib; sourceTree = "<group>"; };
+		FE05606E142C67B1001FC8E0 /* HttpConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpConnectionDelegate.h; path = service/network/HttpConnectionDelegate.h; sourceTree = "<group>"; };
+		FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpConnectionDelegate.m; path = service/network/HttpConnectionDelegate.m; sourceTree = "<group>"; };
 		FE13CE6514233DD000795A0B /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = controller/LoginController.h; sourceTree = "<group>"; };
 		FE13CE6614233DD000795A0B /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = controller/LoginController.m; sourceTree = "<group>"; };
 		FE13CE9D142341F400795A0B /* RegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RegisterController.xib; path = ui/RegisterController.xib; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 			children = (
 				FE161D751428BC4500724EEC /* HttpService.h */,
 				FE161D761428BC4500724EEC /* HttpService.m */,
+				FE05606E142C67B1001FC8E0 /* HttpConnectionDelegate.h */,
+				FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */,
 			);
 			name = network;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				FE616DC314288E9B00477CB1 /* FormValidator.m in Sources */,
 				FE161D771428BC4500724EEC /* HttpService.m in Sources */,
 				FE45D473142B56E6004B0097 /* SinaService.m in Sources */,
+				FE056070142C67B1001FC8E0 /* HttpConnectionDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

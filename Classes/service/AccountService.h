@@ -8,22 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseService.h"
+#import "HttpService.h"
 
 @class RegisterForm;
 @class LoginForm;
+@class BaseController;
 
 @interface AccountService : BaseService {
-
+	HttpService* httpService;
 }
 
-//注册一个账户
-//成功返回1
-//用户名已存在返回0
-+(int) regester:(RegisterForm*)form;
+-(id) initWithOwnerController:(BaseController *)controller;
+-(void) dealloc;
+
+-(void) regester:(RegisterForm*)form;
 
 //登陆
 //成功返回1
 //失败返回0
-+(int) login:(LoginForm*)form;
+-(int) login:(LoginForm*)form;
 
 @end

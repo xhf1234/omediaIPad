@@ -7,8 +7,18 @@
 //
 
 #import "BaseService.h"
-
+#import "BaseController.h"
 
 @implementation BaseService
+	
+@synthesize ownerController;
+
+-(id) initWithOwnerController:(BaseController *)controller {
+	self = [super init];
+	if(self) {
+		self.ownerController = controller;
+	}
+	return self;
+}
 
 @end

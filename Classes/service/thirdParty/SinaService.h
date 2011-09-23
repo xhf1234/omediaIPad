@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "BaseService.h"
 
+@class BaseController;
+
 @interface SinaService : BaseService {
 	//TODO  for  ZhuWei
 }
+
+-(id) initWithOwnerController:(BaseController *)controller;
 
 @end

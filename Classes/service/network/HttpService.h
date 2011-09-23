@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "BaseService.h"
 
+@class HttpConnectionDelegate;
+@class BaseController;
+
 @interface HttpService : BaseService {
 	
 }
 
--(NSString*) httpGet:(NSString*)url;
+-(id) initWithOwnerController:(BaseController *)controller;
+-(void) httpGet:(NSString *)url withTimeout:(double)timeout withCallback:(SEL)callback;
 
 @end

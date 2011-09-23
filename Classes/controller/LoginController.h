@@ -9,12 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "BaseController.h"
 
+@class AccountService;
+
 @interface LoginController : BaseController {
     IBOutlet UITextField *password;
     IBOutlet UITextField *username;
+	AccountService* accountService;
 }
 
 -(IBAction) actionLogin:(id)sender;
 -(IBAction) actionRegister:(id)sender;
+
+-(void) dealloc;
+-(id) init;
 
 @end

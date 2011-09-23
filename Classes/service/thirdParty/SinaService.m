@@ -11,4 +11,12 @@
 
 @implementation SinaService
 
+-(id) initWithOwnerController:(BaseController *)controller {
+	self = [super initWithOwnerController:controller];
+	if (self) {
+		
+	}
+	return self;
+}
+
 @end

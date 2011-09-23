@@ -9,15 +9,31 @@
 #import "AccountService.h"
 #import "RegisterForm.h"
 #import "LoginForm.h"
+#import "HttpService.h"
 
 @implementation AccountService
 
-+(int) regester:(RegisterForm*)form {
-	//TODO
-	return 0;
+-(id) initWithOwnerController:(BaseController *)controller {
+	self = [super initWithOwnerController:controller];
+	if(self) {
+		httpService = [[HttpService alloc]initWithOwnerController:controller];
+	}
+	return self;
 }
 
-+(int) login:(LoginForm *)form {
+-(void) dealloc {
+	[httpService release];
+	[super dealloc];
+}
+
+
+
+-(void) regester:(RegisterForm *)form {
+	[httpService httpGet:@"http://127.0.0.1:8080/omedia/register.do"
+			 withTimeout:20.0 withCallback:NSSelectorFromString(@"registerCallback:")];
+}
+
+-(int) login:(LoginForm *)form {
 	//TODO
 	return 1;
 }

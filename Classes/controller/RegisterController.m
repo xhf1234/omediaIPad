@@ -8,6 +8,7 @@
 
 #import "RegisterController.h"
 #import "RegisterForm.h"
+#import "AccountService.h"
 
 
 @implementation RegisterController
@@ -20,8 +21,31 @@
 	form.email = email.text;
 	NSString* validateMsg = [form validate];
 	if (validateMsg != nil) {
-		[self showAlert:validateMsg buttonLabel:@"确定"];
+		//[self showAlert:validateMsg buttonLabel:@"确定"];
 	}
+	[accountService regester:form];
+	[form release];
+}
+
+-(void) dealloc {
+	[username release];
+	[password release];
+	[confirmPassword release];
+	[email release];
+	[accountService release];
+	[super dealloc];
+}
+
+-(id) init {
+	self = [super init];
+	if(self) {
+		accountService = [[AccountService alloc]initWithOwnerController:self];
+	}
+	return self;
+}
+
+-(void) registerCallback:(NSString*)json {
+	[self showAlert:json buttonLabel:@"确定"];
 }
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -62,14 +86,6 @@
     // e.g. self.myOutlet = nil;
 }
 
-
-- (void)dealloc {
-	[username release];
-	[password release];
-	[confirmPassword release];
-	[email release];
-    [super dealloc];
-}
 
 
 @end

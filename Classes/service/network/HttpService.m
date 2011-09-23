@@ -7,13 +7,27 @@
 //
 
 #import "HttpService.h"
-
+#import "HttpConnectionDelegate.h"
 
 @implementation HttpService
 
--(NSString*) httpGet:(NSString *)url {
-	//TODO
-	return nil;
+-(void) httpGet:(NSString *)url withTimeout:(double)timeout withCallback:(SEL)callback{
+	HttpConnectionDelegate* delegate = [[HttpConnectionDelegate alloc]initWithOwnerHttpService:self withCallback:callback];
+	NSURL* nsurl = [NSURL URLWithString:url];
+	NSURLRequest* request = [NSURLRequest requestWithURL:nsurl
+											 cachePolicy:NSURLRequestUseProtocolCachePolicy
+										 timeoutInterval:timeout]; 
+	NSURLConnection* conn = [[NSURLConnection alloc] initWithRequest:request delegate:delegate];
+	[conn autorelease];
+	[delegate autorelease];
+}
+
+-(id) initWithOwnerController:(BaseController *)controller {
+	self = [super initWithOwnerController:controller];
+	if (self) {
+		
+	}
+	return self;
 }
 
 @end
