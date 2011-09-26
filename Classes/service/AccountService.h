@@ -23,9 +23,6 @@
 
 -(void) regester:(RegisterForm*)form;
 
-//登陆
-//成功返回1
-//失败返回0
--(int) login:(LoginForm*)form;
+-(void) login:(LoginForm*)form;
 
 @end

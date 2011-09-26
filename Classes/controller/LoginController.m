@@ -10,7 +10,7 @@
 #import "RegisterController.h"
 #import "LoginForm.h"
 #import "AccountService.h"
-#import "AccountController.h"
+#import "SettingController.h"
 
 @implementation LoginController
 
@@ -28,22 +28,26 @@
 	NSString* validateMsg = [form validate];
 	if (validateMsg !=nil) {//前端验证失败
 		[self showAlert:validateMsg buttonLabel:@"确定"];
-		[form release];
-		return;
+	} else {
+		[accountService login:form];
 	}
-	int r = [accountService login:form];
 	[form release];
-	if (r==0) {//账号或密码错误
-		[self showAlert:@"账号或密码错误" buttonLabel:@"确定"];
-		return;
+}
+
+-(void) loginCallback:(NSString*)json {
+	if ([json isEqualToString:@"{result:1}"]) {
+		UITabBarController* tabController = [[UITabBarController alloc] init];
+		SettingController* settingController = [[SettingController alloc]init];
+		tabController.viewControllers = [NSArray arrayWithObjects: settingController, nil];
+		[settingController release];
+		[self changeBackTitle:@"退出"];
+		[self.navigationController pushViewController:tabController animated:YES];
+		[tabController release];
+	} else if ([json isEqualToString:@"{result:2}"]) {
+		[self showAlert:@"用户名或密码错误" buttonLabel:@"确定"];
+	} else {
+		[self showAlert:@"服务器错误" buttonLabel:@"确定"];
 	}
-	UITabBarController* tabController = [[UITabBarController alloc] init];
-	AccountController* accountController = [[AccountController alloc]init];
-	tabController.viewControllers = [NSArray arrayWithObjects: accountController, nil];
-	[accountController release];
-	[self changeBackTitle:@"退出"];
-	[self.navigationController pushViewController:tabController animated:YES];
-	[tabController release];
 }
 
 -(id) init {

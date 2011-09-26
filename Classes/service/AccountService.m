@@ -29,13 +29,15 @@
 
 
 -(void) regester:(RegisterForm *)form {
-	[httpService httpGet:@"http://127.0.0.1:8080/omedia/register.do"
+	NSString* url = [NSString stringWithFormat:@"http://166.111.137.72:10086/omedia/register.do?username=%@&password=%@&email=%@",form.username,form.password,form.email];
+	[httpService httpGet:url
 			 withTimeout:20.0 withCallback:NSSelectorFromString(@"registerCallback:")];
 }
 
--(int) login:(LoginForm *)form {
-	//TODO
-	return 1;
+-(void) login:(LoginForm *)form {
+	NSString* url = [NSString stringWithFormat:@"http://166.111.137.72:10086/omedia/login.do?username=%@&password=%@",form.username,form.password];
+	[httpService httpGet:url
+			 withTimeout:20.0 withCallback:NSSelectorFromString(@"loginCallback:")];
 }
 
 @end

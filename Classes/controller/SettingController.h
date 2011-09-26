@@ -10,7 +10,7 @@
 #import "BaseController.h"
 
 
-@interface AccountController : BaseController {
+@interface SettingController : BaseController {
 
 }
 

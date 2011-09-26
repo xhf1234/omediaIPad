@@ -21,9 +21,10 @@
 	form.email = email.text;
 	NSString* validateMsg = [form validate];
 	if (validateMsg != nil) {
-		//[self showAlert:validateMsg buttonLabel:@"确定"];
+		[self showAlert:validateMsg buttonLabel:@"确定"];
+	} else {
+		[accountService regester:form];
 	}
-	[accountService regester:form];
 	[form release];
 }
 
@@ -45,9 +46,15 @@
 }
 
 -(void) registerCallback:(NSString*)json {
-	[self showAlert:json buttonLabel:@"确定"];
+	if ([json isEqualToString:@"{result:1}"]) {
+		[self showAlert:@"注册成功" buttonLabel:@"确定"];
+		[self.navigationController popViewControllerAnimated:YES];
+	} else if ([json isEqualToString:@"{result:2}"]) {
+		[self showAlert:@"该用户名已被注册" buttonLabel:@"确定"];
+	} else {
+		[self showAlert:@"服务器错误" buttonLabel:@"确定"];
+	}
 }
-
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

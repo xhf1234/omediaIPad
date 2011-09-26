@@ -6,10 +6,10 @@
 //  Copyright 2011 THU. All rights reserved.
 //
 
-#import "AccountController.h"
+#import "SettingController.h"
 
 
-@implementation AccountController
+@implementation SettingController
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
