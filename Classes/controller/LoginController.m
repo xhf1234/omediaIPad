@@ -29,12 +29,14 @@
 	if (validateMsg !=nil) {//前端验证失败
 		[self showAlert:validateMsg buttonLabel:@"确定"];
 	} else {
+		[indicator startAnimating];
 		[accountService login:form];
 	}
 	[form release];
 }
 
 -(void) loginCallback:(NSString*)json {
+	[indicator stopAnimating];
 	if ([json isEqualToString:@"{result:1}"]) {
 		UITabBarController* tabController = [[UITabBarController alloc] init];
 		SettingController* settingController = [[SettingController alloc]init];
@@ -58,7 +60,15 @@
 	return self;
 }
 
+//override
+-(void) httpError {
+	[indicator stopAnimating];
+	[super httpError];
+}
+
 -(void) dealloc {
+	[accountService release];
+	[indicator release];
 	[username release];
 	[password release];
 	[super dealloc];

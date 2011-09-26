@@ -21,6 +21,10 @@
 	[back release];
 }
 
+-(void) httpError {
+	[self showAlert:@"网络错误" buttonLabel:@"确定"];
+}
+
 -(void) showAlert:(NSString*)message buttonLabel:(NSString*)buttonLabel {
 	UIAlertView *alertDialog = [[UIAlertView alloc] initWithTitle:nil 
 														  message:message

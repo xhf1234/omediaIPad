@@ -23,12 +23,20 @@
 	if (validateMsg != nil) {
 		[self showAlert:validateMsg buttonLabel:@"确定"];
 	} else {
+		[indicator startAnimating];
 		[accountService regester:form];
 	}
+
 	[form release];
 }
 
+-(void) httpError {
+	[indicator stopAnimating];
+	[super httpError];
+}
+
 -(void) dealloc {
+	[indicator release];
 	[username release];
 	[password release];
 	[confirmPassword release];

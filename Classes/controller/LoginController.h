@@ -14,6 +14,7 @@
 @interface LoginController : BaseController {
     IBOutlet UITextField *password;
     IBOutlet UITextField *username;
+    IBOutlet UIActivityIndicatorView *indicator;
 	AccountService* accountService;
 }
 

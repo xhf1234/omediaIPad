@@ -18,5 +18,7 @@
 - (void) changeBackTitle:(NSString*)title;
 //显示alert
 -(void) showAlert:(NSString*)message buttonLabel:(NSString*)buttonLabel;
+//http请求出错，弹出错误提示框
+-(void) httpError;
 
 @end

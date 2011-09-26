@@ -16,6 +16,7 @@
     IBOutlet UITextField *email;
     IBOutlet UITextField *password;
     IBOutlet UITextField *username;
+    IBOutlet UIActivityIndicatorView *indicator;
 	
 	AccountService* accountService;
 }

@@ -62,7 +62,7 @@
 	
 }
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-	[ownerHttpService.ownerController showAlert:@"网络错误" buttonLabel:@"确定"];
+	[ownerHttpService.ownerController httpError];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
