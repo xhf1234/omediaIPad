@@ -15,6 +15,7 @@
 		FE0248AD142838D400465F02 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0248AB142838D400465F02 /* SettingController.m */; };
 		FE0248B61428390700465F02 /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0248B51428390700465F02 /* SettingController.xib */; };
 		FE056070142C67B1001FC8E0 /* HttpConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */; };
+		FE0EFDC7143070AC0021C7A3 /* SettingForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0EFDC6143070AC0021C7A3 /* SettingForm.m */; };
 		FE13CE6814233DD000795A0B /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE13CE6614233DD000795A0B /* LoginController.m */; };
 		FE13CEA0142341F400795A0B /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9D142341F400795A0B /* RegisterController.xib */; };
 		FE13CEA1142341F400795A0B /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9E142341F400795A0B /* LoginController.xib */; };
@@ -49,6 +50,8 @@
 		FE0248B51428390700465F02 /* SettingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingController.xib; path = ui/SettingController.xib; sourceTree = "<group>"; };
 		FE05606E142C67B1001FC8E0 /* HttpConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpConnectionDelegate.h; path = service/network/HttpConnectionDelegate.h; sourceTree = "<group>"; };
 		FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpConnectionDelegate.m; path = service/network/HttpConnectionDelegate.m; sourceTree = "<group>"; };
+		FE0EFDC5143070AC0021C7A3 /* SettingForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingForm.h; path = model/formModel/SettingForm.h; sourceTree = "<group>"; };
+		FE0EFDC6143070AC0021C7A3 /* SettingForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingForm.m; path = model/formModel/SettingForm.m; sourceTree = "<group>"; };
 		FE13CE6514233DD000795A0B /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = controller/LoginController.h; sourceTree = "<group>"; };
 		FE13CE6614233DD000795A0B /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = controller/LoginController.m; sourceTree = "<group>"; };
 		FE13CE9D142341F400795A0B /* RegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RegisterController.xib; path = ui/RegisterController.xib; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				FE25819C141FBDD200F890F7 /* ProValidateForm.h */,
 				FE616DC114288E9B00477CB1 /* FormValidator.h */,
 				FE616DC214288E9B00477CB1 /* FormValidator.m */,
+				FE0EFDC5143070AC0021C7A3 /* SettingForm.h */,
+				FE0EFDC6143070AC0021C7A3 /* SettingForm.m */,
 			);
 			name = formModel;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				FE161D771428BC4500724EEC /* HttpService.m in Sources */,
 				FE45D473142B56E6004B0097 /* SinaService.m in Sources */,
 				FE056070142C67B1001FC8E0 /* HttpConnectionDelegate.m in Sources */,
+				FE0EFDC7143070AC0021C7A3 /* SettingForm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

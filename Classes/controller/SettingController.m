@@ -11,6 +11,23 @@
 
 @implementation SettingController
 
+- (IBAction)actionSaveSetting:(id)sender {
+    //TODO for @liyunhao
+}
+
+- (void) dealloc
+{
+	[oldPassword release];
+	[newPassword release];
+	[confirmPassword release];
+	[email release];
+	[realName release];
+	[phone release];
+	[address release];
+	[super dealloc];
+}
+
+
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -50,10 +67,6 @@
     // e.g. self.myOutlet = nil;
 }
 
-
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end

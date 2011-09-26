@@ -26,8 +26,6 @@
 	[super dealloc];
 }
 
-
-
 -(void) regester:(RegisterForm *)form {
 	NSString* url = [NSString stringWithFormat:@"http://166.111.137.72:10086/omedia/register.do?username=%@&password=%@&email=%@",form.username,form.password,form.email];
 	[httpService httpGet:url

@@ -11,7 +11,16 @@
 
 
 @interface SettingController : BaseController {
-
+    IBOutlet UITextField *address;
+    IBOutlet UITextField *confirmPassword;
+    IBOutlet UITextField *email;
+    IBOutlet UITextField *newPassword;
+    IBOutlet UITextField *oldPassword;
+    IBOutlet UITextField *phone;
+    IBOutlet UITextField *realName;
 }
+- (IBAction)actionSaveSetting:(id)sender;
+
+- (void) dealloc;
 
 @end
