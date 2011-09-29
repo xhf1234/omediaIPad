@@ -32,5 +32,6 @@
 
 @synthesize username;
 @synthesize password;
+@synthesize rememberPassword;
 
 @end

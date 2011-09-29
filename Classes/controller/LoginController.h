@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseController.h"
+#import "LoginForm.h";
 
 @class AccountService;
 
@@ -15,8 +16,12 @@
     IBOutlet UITextField *password;
     IBOutlet UITextField *username;
     IBOutlet UIActivityIndicatorView *indicator;
+    IBOutlet UISwitch *rememberPassword;
 	AccountService* accountService;
+	LoginForm* initedForm;
 }
+
+@property(nonatomic, retain) LoginForm* initedForm;
 
 -(IBAction) actionLogin:(id)sender;
 -(IBAction) actionRegister:(id)sender;

@@ -33,6 +33,8 @@
 		FE23BAC3141F7CAE003C4F5E /* LoginForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAC2141F7CAE003C4F5E /* LoginForm.m */; };
 		FE45D473142B56E6004B0097 /* SinaService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE45D472142B56E6004B0097 /* SinaService.m */; };
 		FE616DC314288E9B00477CB1 /* FormValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE616DC214288E9B00477CB1 /* FormValidator.m */; };
+		FE7199091430C1E300B70636 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE7199081430C1E300B70636 /* Settings.bundle */; };
+		FEC80D1F1430C28200B1A07C /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEC80D1E1430C28200B1A07C /* Root.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,9 @@
 		FE45D472142B56E6004B0097 /* SinaService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SinaService.m; path = service/thirdParty/SinaService.m; sourceTree = "<group>"; };
 		FE616DC114288E9B00477CB1 /* FormValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormValidator.h; path = model/formModel/FormValidator.h; sourceTree = "<group>"; };
 		FE616DC214288E9B00477CB1 /* FormValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormValidator.m; path = model/formModel/FormValidator.m; sourceTree = "<group>"; };
+		FE7199081430C1E300B70636 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = "<group>"; };
+		FEC80D1C1430C27900B1A07C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = Resources/Settings.bundle/English.lproj/Root.strings; sourceTree = "<group>"; };
+		FEC80D201430C29100B1A07C /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = Resources/Settings.bundle/zh_CN.lproj/Root.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				8D1107310486CEB800E47090 /* omedia-Info.plist */,
+				FE7199081430C1E300B70636 /* Settings.bundle */,
+				FEC80D1E1430C28200B1A07C /* Root.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -295,6 +302,7 @@
 				Japanese,
 				French,
 				German,
+				zh_CN,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -314,6 +322,8 @@
 				FE13CEA1142341F400795A0B /* LoginController.xib in Resources */,
 				FE13CEA2142341F400795A0B /* MainWindow.xib in Resources */,
 				FE0248B61428390700465F02 /* SettingController.xib in Resources */,
+				FE7199091430C1E300B70636 /* Settings.bundle in Resources */,
+				FEC80D1F1430C28200B1A07C /* Root.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +357,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FEC80D1E1430C28200B1A07C /* Root.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEC80D1C1430C27900B1A07C /* English */,
+				FEC80D201430C29100B1A07C /* zh_CN */,
+			);
+			name = Root.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {

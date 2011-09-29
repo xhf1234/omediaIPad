@@ -14,6 +14,8 @@
 
 @implementation LoginController
 
+@synthesize initedForm;
+
 -(IBAction) actionRegister:(id)sender {
 	RegisterController* registerController = [[RegisterController alloc] init];
 	registerController.navigationItem.title = @"注册";
@@ -38,6 +40,16 @@
 -(void) loginCallback:(NSString*)json {
 	[indicator stopAnimating];
 	if ([json isEqualToString:@"{result:1}"]) {
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		[defaults setObject:username.text forKey:@"username"];
+		if ([rememberPassword isOn]) {
+			[defaults setBool:YES forKey:@"rememberPassword"];
+			[defaults setObject:password.text forKey:@"password"];
+		} else {
+			[defaults setBool:NO forKey:@"rememberPassword"];
+			[defaults setObject:@"" forKey:@"password"];
+		}
+		
 		UITabBarController* tabController = [[UITabBarController alloc] init];
 		SettingController* settingController = [[SettingController alloc]init];
 		tabController.viewControllers = [NSArray arrayWithObjects: settingController, nil];
@@ -67,6 +79,7 @@
 }
 
 -(void) dealloc {
+	[initedForm release];
 	[accountService release];
 	[indicator release];
 	[username release];
@@ -85,12 +98,19 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	if (initedForm != nil) {
+		username.text = initedForm.username;
+		[rememberPassword setOn:initedForm.rememberPassword];
+		if ([rememberPassword isOn]) {
+			password.text = initedForm.password;
+		}
+	}
     [super viewDidLoad];
 }
-*/
+
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

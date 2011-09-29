@@ -14,11 +14,13 @@
 @interface LoginForm : BaseFormModel <ProFormToData, ProValidateForm> {
 	NSString* username;
 	NSString* password;
+	BOOL rememberPassword;
 }
 
 -(void) dealloc;
 
 @property(nonatomic, retain) NSString* username;
 @property(nonatomic, retain) NSString* password;
+@property(nonatomic, assign) BOOL rememberPassword;
 
 @end

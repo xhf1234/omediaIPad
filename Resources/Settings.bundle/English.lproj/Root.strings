@@ -1,0 +1,12 @@
+/* 
+   Root.strings
+   omedia
+
+   Created by xu hongfeng on 11-9-26.
+   Copyright 2011 THU. All rights reserved.
+ */
+ 
+"AccountSetting" = "Account Settings";
+"Username" = "UserName";
+"Password" = "Password";
+"RememberPassword" = "Remember Password";

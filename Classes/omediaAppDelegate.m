@@ -23,6 +23,17 @@
 	
 	LoginController* loginController = [[LoginController alloc] init];
 	loginController.title = @"登陆";
+	
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	LoginForm* form = [[LoginForm alloc]init];
+	form.username = [defaults stringForKey:@"username"];
+	form.rememberPassword = [defaults boolForKey:@"rememberPassword"];
+	if (form.rememberPassword) {
+		form.password = [defaults stringForKey:@"password"];
+	}
+	loginController.initedForm = form;
+	[form release];
+
 	[navController pushViewController:loginController animated:NO];
 	[loginController release];
 	
