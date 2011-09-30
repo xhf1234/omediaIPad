@@ -15,6 +15,8 @@
 		FE0248AD142838D400465F02 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0248AB142838D400465F02 /* SettingController.m */; };
 		FE0248B61428390700465F02 /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0248B51428390700465F02 /* SettingController.xib */; };
 		FE056070142C67B1001FC8E0 /* HttpConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */; };
+		FE0EA4D614360E3200977733 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0EA4D414360E3200977733 /* MainController.m */; };
+		FE0EA4F314360EAF00977733 /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0EA4F214360EAF00977733 /* MainController.xib */; };
 		FE0EFDC7143070AC0021C7A3 /* SettingForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0EFDC6143070AC0021C7A3 /* SettingForm.m */; };
 		FE13CE6814233DD000795A0B /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE13CE6614233DD000795A0B /* LoginController.m */; };
 		FE13CEA0142341F400795A0B /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9D142341F400795A0B /* RegisterController.xib */; };
@@ -52,6 +54,9 @@
 		FE0248B51428390700465F02 /* SettingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingController.xib; path = ui/SettingController.xib; sourceTree = "<group>"; };
 		FE05606E142C67B1001FC8E0 /* HttpConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpConnectionDelegate.h; path = service/network/HttpConnectionDelegate.h; sourceTree = "<group>"; };
 		FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpConnectionDelegate.m; path = service/network/HttpConnectionDelegate.m; sourceTree = "<group>"; };
+		FE0EA4D314360E3200977733 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainController.h; path = controller/MainController.h; sourceTree = "<group>"; };
+		FE0EA4D414360E3200977733 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainController.m; path = controller/MainController.m; sourceTree = "<group>"; };
+		FE0EA4F214360EAF00977733 /* MainController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainController.xib; path = ui/MainController.xib; sourceTree = "<group>"; };
 		FE0EFDC5143070AC0021C7A3 /* SettingForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingForm.h; path = model/formModel/SettingForm.h; sourceTree = "<group>"; };
 		FE0EFDC6143070AC0021C7A3 /* SettingForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingForm.m; path = model/formModel/SettingForm.m; sourceTree = "<group>"; };
 		FE13CE6514233DD000795A0B /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = controller/LoginController.h; sourceTree = "<group>"; };
@@ -172,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				FE13CE9D142341F400795A0B /* RegisterController.xib */,
+				FE0EA4F214360EAF00977733 /* MainController.xib */,
 				FE0248B51428390700465F02 /* SettingController.xib */,
 				FE13CE9E142341F400795A0B /* LoginController.xib */,
 				FE13CE9F142341F400795A0B /* MainWindow.xib */,
@@ -206,6 +212,8 @@
 		FE1CAB47141F528B00C022AA /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FE0EA4D314360E3200977733 /* MainController.h */,
+				FE0EA4D414360E3200977733 /* MainController.m */,
 				FE13CEA31423420700795A0B /* RegisterController.m */,
 				FE13CEA41423420700795A0B /* RegisterController.h */,
 				FE1CAB4C141F531600C022AA /* BaseController.h */,
@@ -324,6 +332,7 @@
 				FE0248B61428390700465F02 /* SettingController.xib in Resources */,
 				FE7199091430C1E300B70636 /* Settings.bundle in Resources */,
 				FEC80D1F1430C28200B1A07C /* Root.strings in Resources */,
+				FE0EA4F314360EAF00977733 /* MainController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +362,7 @@
 				FE45D473142B56E6004B0097 /* SinaService.m in Sources */,
 				FE056070142C67B1001FC8E0 /* HttpConnectionDelegate.m in Sources */,
 				FE0EFDC7143070AC0021C7A3 /* SettingForm.m in Sources */,
+				FE0EA4D614360E3200977733 /* MainController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

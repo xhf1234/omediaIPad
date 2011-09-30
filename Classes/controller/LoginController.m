@@ -11,6 +11,7 @@
 #import "LoginForm.h"
 #import "AccountService.h"
 #import "SettingController.h"
+#import "MainController.h"
 
 @implementation LoginController
 
@@ -19,7 +20,6 @@
 -(IBAction) actionRegister:(id)sender {
 	RegisterController* registerController = [[RegisterController alloc] init];
 	registerController.navigationItem.title = @"注册";
-	[self changeBackTitle:@"返回"];
 	[self.navigationController pushViewController:registerController animated:YES];
 	[registerController release];
 }
@@ -49,14 +49,11 @@
 			[defaults setBool:NO forKey:@"rememberPassword"];
 			[defaults setObject:@"" forKey:@"password"];
 		}
-		
-		UITabBarController* tabController = [[UITabBarController alloc] init];
-		SettingController* settingController = [[SettingController alloc]init];
-		tabController.viewControllers = [NSArray arrayWithObjects: settingController, nil];
-		[settingController release];
+		MainController* mainController = [[MainController alloc]init];
+		mainController.navigationItem.title = @"主菜单";
 		[self changeBackTitle:@"退出"];
-		[self.navigationController pushViewController:tabController animated:YES];
-		[tabController release];
+		[self.navigationController pushViewController:mainController animated:YES];
+		[mainController release];
 	} else if ([json isEqualToString:@"{result:2}"]) {
 		[self showAlert:@"用户名或密码错误" buttonLabel:@"确定"];
 	} else {
