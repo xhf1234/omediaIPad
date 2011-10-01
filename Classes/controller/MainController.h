@@ -16,4 +16,5 @@
     IBOutlet UIButton *sina;
 }
 - (IBAction)actionSettings:(id)sender;
+- (IBAction)actionFriends:(id)sender;
 @end

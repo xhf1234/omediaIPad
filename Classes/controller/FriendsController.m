@@ -1,30 +1,16 @@
     //
-//  MainController.m
+//  FriendsController.m
 //  omedia
 //
-//  Created by xu hongfeng on 11-9-30.
+//  Created by xu hongfeng on 11-10-1.
 //  Copyright 2011 THU. All rights reserved.
 //
 
-#import "MainController.h"
-#import "SettingController.h"
 #import "FriendsController.h"
 
 
-@implementation MainController
-- (IBAction)actionSettings:(id)sender {
-	SettingController* settingController = [[SettingController alloc]init];
-	settingController.navigationItem.title = @"设置";
-    [self.navigationController pushViewController:settingController animated:YES];
-	[settingController release];
-}
+@implementation FriendsController
 
-- (IBAction)actionFriends:(id)sender {
-	FriendsController* friendsController = [[FriendsController alloc]init];
-	friendsController.navigationItem.title = @"好友";
-    [self.navigationController pushViewController:friendsController animated:YES];
-	[friendsController release];
-}
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -36,12 +22,14 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	NSURL* url = [NSURL URLWithString:@"http://arborjs.org/ "];
+	NSURLRequest* request = [NSURLRequest requestWithURL:url];
+	[webView loadRequest:request];
     [super viewDidLoad];
 }
-*/
+
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -66,9 +54,7 @@
 
 
 - (void)dealloc {
-	[friends release];
-	[settings release];
-	[sina release];
+	[webView release];
     [super dealloc];
 }
 
