@@ -10,6 +10,7 @@
 #import "CoreDataService.h"
 #import "Account.h"
 #import "omediaAppDelegate.h"
+#import "CoreDataException.h"
 
 @implementation CoreDataService
 
@@ -27,36 +28,58 @@
 
 -(Account*) getAccountWithId:(NSNumber *)accountId {
 	NSFetchRequest* request = [[NSFetchRequest alloc]init];
-	NSEntityDescription* entity = [NSEntityDescription entityForName:@"Account" inManagedObjectContext:context];
-	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"%K = %@",@"accountId",accountId];
-	[request setEntity:entity];
-	[request setPredicate:predicate];
-	NSError *error = nil;
-	NSArray *results = [context executeFetchRequest:request error:&error];
-	[request release];
-	if (results == nil) {
-		//TODO  exception
-		return nil;
+	@try {
+		NSEntityDescription* entity = [NSEntityDescription entityForName:@"Account" inManagedObjectContext:context];
+		NSPredicate* predicate = [NSPredicate predicateWithFormat:@"%K = %@",@"accountId",accountId];
+		[request setEntity:entity];
+		[request setPredicate:predicate];
+		NSError *error = nil;
+		NSArray *results = [context executeFetchRequest:request error:&error];
+		if (results == nil) {
+			@throw [CoreDataException exceptionWithReason:[error description]];
+		}
+		if ([results count] == 0) {
+			return nil;
+		} else {
+			return [results objectAtIndex:0];
+		}
 	}
-	if ([results count] == 0) {
-		return nil;
-	} else {
-		return [results objectAtIndex:0];
+	@catch (CoreDataException * e) {
+		@throw e;
+	}
+	@catch (NSException * e) {
+		@throw [CoreDataException exceptionWithReason:[e reason]];
+	}
+	@finally {
+		[request release];
 	}
 }
 
 -(Account*) createAccountWithId:(NSNumber *)accountId withUserName:(NSString *)username withToken:(NSNumber *)token {
-	Account* account = (Account*)[NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:context];
-	account.username = username;
-	account.token = token;
-	account.accountId = accountId;
-	return account;
+	@try {
+		Account* account = (Account*)[NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:context];
+		account.username = username;
+		account.token = token;
+		account.accountId = accountId;
+		return account;
+	}
+	@catch (NSException * e) {
+		@throw [CoreDataException exceptionWithReason:[e reason]];
+	}
 }
 
 -(void) saveContext {
-	NSError* error = nil;
-	if (![context save:&error]) {
-		//TODO exception
+	@try {
+		NSError* error = nil;
+		if (![context save:&error]) {
+			@throw [CoreDataException exceptionWithReason:[error description]];
+		}
+	}
+	@catch (CoreDataException * e) {
+		@throw e;
+	}
+	@catch (NSException * e) {
+		@throw [CoreDataException exceptionWithReason:[e reason]];
 	}
 }
 

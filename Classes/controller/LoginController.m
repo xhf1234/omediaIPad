@@ -15,6 +15,7 @@
 #import "JsonUtil.h"
 #import "CoreDataService.h"
 #import "Account.h"
+#import "CoreDataException.h"
 
 @implementation LoginController
 
@@ -58,16 +59,21 @@
 			[defaults setObject:@"" forKey:@"password"];
 		}
 		//save core data
-		NSNumber* accountId = [jsonObject valueForKey:@"accountId"];
-		NSNumber* token = [jsonObject valueForKey:@"token"];
-		Account* account = [coreDataService getAccountWithId:accountId];
-		if (account == nil) {
-			account = [coreDataService createAccountWithId:accountId 
-											withUserName:loginForm.username
-												 withToken:token];
+		@try {
+			NSNumber* accountId = [jsonObject valueForKey:@"accountId"];
+			NSNumber* token = [jsonObject valueForKey:@"token"];
+			Account* account = [coreDataService getAccountWithId:accountId];
+			if (account == nil) {
+				account = [coreDataService createAccountWithId:accountId 
+												  withUserName:loginForm.username
+													 withToken:token];
+			}
+			account.token = token;
+			[coreDataService saveContext];
 		}
-		account.token = token;
-		[coreDataService saveContext];
+		@catch (CoreDataException * e) {
+			[self showAlert:[e description] buttonLabel:@"确定"];
+		}
 		//跳转到主菜单
 		MainController* mainController = [[MainController alloc]init];
 		mainController.navigationItem.title = @"主菜单";
