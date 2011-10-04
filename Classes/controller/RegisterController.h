@@ -10,6 +10,7 @@
 #import "BaseController.h"
 
 @class AccountService;
+@class RegisterForm;
 
 @interface RegisterController : BaseController {
     IBOutlet UITextField *confirmPassword;
@@ -17,6 +18,8 @@
     IBOutlet UITextField *password;
     IBOutlet UITextField *username;
     IBOutlet UIActivityIndicatorView *indicator;
+	
+	RegisterForm* registerForm;
 	
 	AccountService* accountService;
 }

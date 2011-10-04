@@ -1,25 +1,23 @@
-//
+// 
 //  Account.m
 //  omedia
 //
-//  Created by xu hongfeng on 11-9-13.
+//  Created by xu hongfeng on 11-10-2.
 //  Copyright 2011 THU. All rights reserved.
 //
 
 #import "Account.h"
 
 
-@implementation Account
+@implementation Account 
 
--(void) dealloc {
-	[username release];
-	[password release];
-	[email release];
-	[super dealloc];
-}
-
-@synthesize username;
-@synthesize password;
-@synthesize email;
+@dynamic address;
+@dynamic password;
+@dynamic realName;
+@dynamic accountId;
+@dynamic phone;
+@dynamic email;
+@dynamic username;
+@dynamic token;
 
 @end

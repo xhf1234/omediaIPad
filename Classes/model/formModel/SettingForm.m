@@ -8,7 +8,6 @@
 
 #import "SettingForm.h"
 
-
 @implementation SettingForm
 
 @synthesize oldPassword;

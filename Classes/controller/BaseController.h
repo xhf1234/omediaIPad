@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseController : UIViewController {
 
+@class omediaAppDelegate;
+@interface BaseController : UIViewController {
 }
 
 //导航返回
@@ -20,5 +21,7 @@
 -(void) showAlert:(NSString*)message buttonLabel:(NSString*)buttonLabel;
 //http请求出错，弹出错误提示框
 -(void) httpError;
+
+-(omediaAppDelegate*)omediatAppDelegate;
 
 @end

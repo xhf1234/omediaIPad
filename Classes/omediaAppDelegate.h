@@ -7,13 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface omediaAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-	UINavigationController* navController;
+	UINavigationController* navController; 
+
+@private
+    NSManagedObjectContext *managedObjectContext_;
+    NSManagedObjectModel *managedObjectModel_;
+    NSPersistentStoreCoordinator *persistentStoreCoordinator_;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (NSURL *)applicationDocumentsDirectory;
 
 @end
 

@@ -12,10 +12,11 @@
 #import "AccountService.h"
 #import "SettingController.h"
 #import "MainController.h"
+#import "JsonUtil.h"
+#import "CoreDataService.h"
+#import "Account.h"
 
 @implementation LoginController
-
-@synthesize initedForm;
 
 -(IBAction) actionRegister:(id)sender {
 	RegisterController* registerController = [[RegisterController alloc] init];
@@ -24,39 +25,58 @@
 	[registerController release];
 }
 -(IBAction) actionLogin:(id)sender {
-	LoginForm* form = [[LoginForm alloc] init];
-	form.username = username.text;
-	form.password = password.text;
-	NSString* validateMsg = [form validate];
+	loginForm.username = username.text;
+	loginForm.password = password.text;
+	NSString* validateMsg = [loginForm validate];
 	if (validateMsg !=nil) {//前端验证失败
 		[self showAlert:validateMsg buttonLabel:@"确定"];
 	} else {
 		[indicator startAnimating];
-		[accountService login:form];
+		[accountService login:loginForm];
 	}
-	[form release];
 }
 
+//http登陆请求的回调函数
 -(void) loginCallback:(NSString*)json {
+	//停止进度条
 	[indicator stopAnimating];
-	if ([json isEqualToString:@"{result:1}"]) {
+	//解析http返回的json数据
+	//{"result":1,"token",string} 登陆成功
+	//{"result":2} 密码错误
+	//{"result":-1} 服务器错误
+	NSDictionary* jsonObject = [JsonUtil readObject:json];
+	NSNumber* result = [jsonObject valueForKey:@"result"];
+	if ([result integerValue] == 1) {//登陆成功
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		//记住用户名
 		[defaults setObject:username.text forKey:@"username"];
-		if ([rememberPassword isOn]) {
+		if ([rememberPassword isOn]) {//记住密码
 			[defaults setBool:YES forKey:@"rememberPassword"];
 			[defaults setObject:password.text forKey:@"password"];
-		} else {
+		} else {//不记住密码
 			[defaults setBool:NO forKey:@"rememberPassword"];
 			[defaults setObject:@"" forKey:@"password"];
 		}
+		//save core data
+		NSNumber* accountId = [jsonObject valueForKey:@"accountId"];
+		NSNumber* token = [jsonObject valueForKey:@"token"];
+		Account* account = [coreDataService getAccountWithId:accountId];
+		if (account == nil) {
+			account = [coreDataService createAccountWithId:accountId 
+											withUserName:loginForm.username
+												 withToken:token];
+		}
+		account.token = token;
+		[coreDataService saveContext];
+		//跳转到主菜单
 		MainController* mainController = [[MainController alloc]init];
 		mainController.navigationItem.title = @"主菜单";
 		[self changeBackTitle:@"退出"];
 		[self.navigationController pushViewController:mainController animated:YES];
 		[mainController release];
-	} else if ([json isEqualToString:@"{result:2}"]) {
+	} else if ([result integerValue] == 2) {//密码错误
 		[self showAlert:@"用户名或密码错误" buttonLabel:@"确定"];
-	} else {
+	} else {//服务器错误
 		[self showAlert:@"服务器错误" buttonLabel:@"确定"];
 	}
 }
@@ -64,7 +84,18 @@
 -(id) init {
 	self = [super init];
 	if(self) {
+		loginForm = [[LoginForm alloc] init];
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		loginForm.username = [defaults stringForKey:@"username"];
+		loginForm.rememberPassword = [defaults boolForKey:@"rememberPassword"];
+		if (loginForm.rememberPassword) {
+			loginForm.password = [defaults stringForKey:@"password"];
+		} else {
+			loginForm.password = @"";
+		}
+
 		accountService = [[AccountService alloc] initWithOwnerController:self];
+		coreDataService = [[CoreDataService alloc] initWithOwnerController:self];
 	}
 	return self;
 }
@@ -76,8 +107,9 @@
 }
 
 -(void) dealloc {
-	[initedForm release];
+	[loginForm release];
 	[accountService release];
+	[coreDataService release];
 	[indicator release];
 	[username release];
 	[password release];
@@ -98,12 +130,10 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	if (initedForm != nil) {
-		username.text = initedForm.username;
-		[rememberPassword setOn:initedForm.rememberPassword];
-		if ([rememberPassword isOn]) {
-			password.text = initedForm.password;
-		}
+	username.text = loginForm.username;
+	[rememberPassword setOn:loginForm.rememberPassword];
+	if ([rememberPassword isOn]) {
+		password.text = loginForm.password;
 	}
     [super viewDidLoad];
 }

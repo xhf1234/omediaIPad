@@ -7,7 +7,7 @@
 //
 
 #import "BaseController.h"
-
+#import "omediaAppDelegate.h"
 
 @implementation BaseController
 
@@ -33,6 +33,9 @@
 												otherButtonTitles:nil];
     [alertDialog show];
     [alertDialog release];
+}
+- (omediaAppDelegate*)omediatAppDelegate {
+	return (omediaAppDelegate*)[UIApplication sharedApplication].delegate;
 }
 
 @end

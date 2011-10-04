@@ -17,6 +17,7 @@
 	Account* account = [[Account alloc]init];
 	account.username = self.username;
 	account.password = self.password;
+	account.email = self.email;
 	[account autorelease];
 	return account;
 }

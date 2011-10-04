@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseModel.h"
 
 
-@interface BaseFormModel : BaseModel {
+@interface BaseFormModel : NSObject {
 }
 
 @end

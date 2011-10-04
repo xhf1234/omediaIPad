@@ -21,4 +21,8 @@
 	return self;
 }
 
+- (omediaAppDelegate*) omediatAppDelegate {
+	return [self.ownerController omediatAppDelegate];
+}
+
 @end

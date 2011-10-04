@@ -19,4 +19,6 @@
 
 -(id) initWithOwnerController:(BaseController*)controller;
 
+-(omediaAppDelegate*)omediatAppDelegate;
+
 @end

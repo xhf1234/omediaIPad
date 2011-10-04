@@ -9,33 +9,28 @@
 #import "RegisterController.h"
 #import "RegisterForm.h"
 #import "AccountService.h"
-
+#import "JsonUtil.h"
+#import "omediaAppDelegate.h"
+#import "Account.h"
 
 @implementation RegisterController
 
 -(IBAction) actionRegister {
-	RegisterForm* form = [[RegisterForm alloc] init];
-	form.username = username.text;
-	form.password = password.text;
-	form.confirmPassword = confirmPassword.text;
-	form.email = email.text;
-	NSString* validateMsg = [form validate];
+	registerForm.username = username.text;
+	registerForm.password = password.text;
+	registerForm.confirmPassword = confirmPassword.text;
+	registerForm.email = email.text;
+	NSString* validateMsg = [registerForm validate];
 	if (validateMsg != nil) {
 		[self showAlert:validateMsg buttonLabel:@"确定"];
 	} else {
 		[indicator startAnimating];
-		[accountService regester:form];
+		[accountService regester:registerForm];
 	}
-
-	[form release];
-}
-
--(void) httpError {
-	[indicator stopAnimating];
-	[super httpError];
 }
 
 -(void) dealloc {
+	[registerForm release]; 
 	[indicator release];
 	[username release];
 	[password release];
@@ -49,20 +44,38 @@
 	self = [super init];
 	if(self) {
 		accountService = [[AccountService alloc]initWithOwnerController:self];
+		registerForm = [[RegisterForm alloc]init];
 	}
 	return self;
 }
 
+//注册账户 http请求的回调函数
 -(void) registerCallback:(NSString*)json {
-	if ([json isEqualToString:@"{result:1}"]) {
+	//停止进度条
+	[indicator stopAnimating];
+	//解析服务端返回的json数据
+	//{"result":1, "accountId",long} 注册成功
+	//"{result":2} 用户名已经被注册
+	//"{result":-1} 服务器错误
+	NSDictionary* jsonObject = [JsonUtil readObject:json];
+	NSNumber* result = [jsonObject valueForKey:@"result"];
+	if ([result integerValue] == 1) {
 		[self showAlert:@"注册成功" buttonLabel:@"确定"];
 		[self.navigationController popViewControllerAnimated:YES];
-	} else if ([json isEqualToString:@"{result:2}"]) {
+	} else if ([result integerValue] == 2) {
 		[self showAlert:@"该用户名已被注册" buttonLabel:@"确定"];
 	} else {
 		[self showAlert:@"服务器错误" buttonLabel:@"确定"];
 	}
 }
+
+
+//override
+-(void) httpError {
+	[indicator stopAnimating];
+	[super httpError];
+}
+
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
