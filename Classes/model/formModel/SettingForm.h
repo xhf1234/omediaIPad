@@ -20,6 +20,9 @@
 	NSString* address;
 }
 
+-(id) init;
+-(void) dealloc;
+
 @property(nonatomic, retain) NSString* oldPassword;
 @property(nonatomic, retain) NSString* newPassword;
 @property(nonatomic, retain) NSString* confirmPassword;

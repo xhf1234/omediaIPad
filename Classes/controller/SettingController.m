@@ -12,11 +12,34 @@
 @implementation SettingController
 
 - (IBAction)actionSaveSetting:(id)sender {
-    //TODO for @liyunhao
+	settingForm.oldPassword = oldPassword.text;
+	settingForm.newPassword = newPassword.text;
+	settingForm.confirmPassword = confirmPassword.text;
+	settingForm.email = email.text;
+	settingForm.realName = realName.text;
+	settingForm.phone = phone.text;
+	settingForm.address = address.text;
+	NSString* validateMsg = [settingForm validate];
+	if (validateMsg != nil) {
+		[self showAlert:validateMsg buttonLabel:@"确定"];
+	} else {
+		//TODO
+	}
+
+}
+
+- (id) init {
+	self = [super init];
+	if(self) {
+		settingForm = [[SettingForm alloc]init];
+		//TODO
+	}
+	return self;
 }
 
 - (void) dealloc
 {
+	[settingForm release];
 	[oldPassword release];
 	[newPassword release];
 	[confirmPassword release];

@@ -13,14 +13,6 @@
 
 @implementation RegisterForm
 
--(BaseDataModel*) toDataModel {
-	Account* account = [[Account alloc]init];
-	account.username = self.username;
-	account.password = self.password;
-	account.email = self.email;
-	[account autorelease];
-	return account;
-}
 
 -(NSString*) validate {
 	if([FormValidator validateIsEmpty:self.username]) {
@@ -54,6 +46,17 @@
 		return @"email格式不正确";
 	}
 	return nil;
+}
+
+- (id)init {
+	self = [super init];
+	if(self) {
+		username = @"";
+		password = @"";
+		confirmPassword = @"";
+		email = @"";
+	}
+	return self;
 }
 
 -(void) dealloc {

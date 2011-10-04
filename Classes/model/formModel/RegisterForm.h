@@ -8,16 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseFormModel.h"
-#import "ProFormToData.h"
 #import "ProValidateForm.h"
 
-@interface RegisterForm : BaseFormModel <ProFormToData, ProValidateForm>{
+@interface RegisterForm : BaseFormModel <ProValidateForm>{
 	NSString* username;
 	NSString* password;
 	NSString* confirmPassword;
 	NSString* email;
 }
 
+- (id) init;
 -(void) dealloc;
 
 @property(nonatomic, retain) NSString* username;

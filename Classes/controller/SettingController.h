@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseController.h"
-
+#import "SettingForm.h"
 
 @interface SettingController : BaseController {
     IBOutlet UITextField *address;
@@ -18,9 +18,11 @@
     IBOutlet UITextField *oldPassword;
     IBOutlet UITextField *phone;
     IBOutlet UITextField *realName;
+	SettingForm* settingForm;
 }
 - (IBAction)actionSaveSetting:(id)sender;
 
+- (id)init;
 - (void) dealloc;
 
 @end
