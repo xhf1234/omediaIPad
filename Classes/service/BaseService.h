@@ -21,4 +21,6 @@
 
 -(omediaAppDelegate*)omediatAppDelegate;
 
+-(void) httpError;
+
 @end

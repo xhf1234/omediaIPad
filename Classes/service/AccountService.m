@@ -35,14 +35,15 @@
 	HttpService* httpService = [self ownerController].httpService;
 	NSString* url = [UrlUtil registerUrl:form];
 	[httpService httpGet:url
-			 withTimeout:20.0 withCallback:NSSelectorFromString(@"registerCallback:")];
+			 withTimeout:20.0 withCallback:NSSelectorFromString(@"registerCallback:") withTarget:self.ownerController];
 }
 
 -(void) login:(LoginForm *)form {
 	HttpService* httpService = [self ownerController].httpService;
 	NSString* url = [UrlUtil loginUrl:form];
 	[httpService httpGet:url
-			 withTimeout:20.0 withCallback:NSSelectorFromString(@"loginCallback:")];
+			 withTimeout:20.0 withCallback:NSSelectorFromString(@"loginCallback:")
+			  withTarget:self.ownerController];
 }
 
 -(void) setting:(SettingForm *)form {
@@ -51,7 +52,8 @@
 	NSNumber* accountId = [self omediatAppDelegate].accountId;
 	Account* account = [coreDataService getAccountWithId:accountId];
 	NSString* url = [UrlUtil settingUrl:form withAccountId:accountId withToken:account.token];
-	[httpService httpGet:url withTimeout:20.0 withCallback:NSSelectorFromString(@"settingCallback:")];
+	[httpService httpGet:url withTimeout:20.0 withCallback:NSSelectorFromString(@"settingCallback:")
+	  withTarget:self.ownerController];
 }
 
 @end

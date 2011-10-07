@@ -14,11 +14,13 @@
 	NSMutableData* receivedData;
 	HttpService* ownerHttpService;
 	SEL callback;
+	id target;
 }
 
 @property(nonatomic, assign) HttpService* ownerHttpService;
 @property(nonatomic, retain) NSMutableData* receivedData;
 @property(nonatomic, assign) SEL callback;
+@property(nonatomic, retain) id target;
 
 -(void)dealloc;
 -(id) initWithOwnerHttpService:(HttpService*)httpService withCallback:(SEL)cb;

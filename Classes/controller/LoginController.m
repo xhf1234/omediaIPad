@@ -17,6 +17,7 @@
 #import "Account.h"
 #import "CoreDataException.h"
 #import "omediaAppDelegate.h"
+#import "SynchronizeDataService.h"
 
 @implementation LoginController
 
@@ -40,8 +41,6 @@
 
 //http登陆请求的回调函数
 -(void) loginCallback:(NSString*)json {
-	//停止进度条
-	[indicator stopAnimating];
 	//解析http返回的json数据
 	//{"result":1,"token",long} 登陆成功
 	//{"result":2} 密码错误
@@ -72,11 +71,16 @@
 			}
 			account.token = token;
 			[coreDataService saveContext];
-			account = [coreDataService getAccountWithId:accountId];
 		}
 		@catch (CoreDataException * e) {
 			[self showAlert:[e description] buttonLabel:@"确定"];
 		}
+		//同步客户端数据
+		[self.syncService synchronizeData];
+		//启动后台间期执行任务的进程
+		[self.syncService startSynchronizeTimer];
+		//停止进度条
+		[indicator stopAnimating];
 		//跳转到主菜单
 		MainController* mainController = [[MainController alloc]init];
 		mainController.navigationItem.title = @"主菜单";
@@ -104,6 +108,12 @@
 		}
 	}
 	return self;
+}
+
+//override
+- (void)viewWillAppear:(BOOL)animated {
+	[self omediatAppDelegate].accountId = 0;
+	[super viewWillAppear:animated];
 }
 
 //override

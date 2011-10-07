@@ -19,6 +19,10 @@
 +(NSString*) registerUrl:(RegisterForm*)form;
 +(NSString*) loginUrl:(LoginForm*)form;
 +(NSString*) settingUrl:(SettingForm*)form withAccountId:(NSNumber*)accountId withToken:(NSNumber*)token;
++(NSString*) checkDataVersionUrlWithAccountId:(NSNumber *)accountId withToken:(NSNumber *)token 
+					  withAccountVersion:(NSNumber *)accountVersion;
++(NSString*) getAccountUrlWithAccountId:(NSNumber*)accountId withToken:(NSNumber*)token;
+
 +(NSString*) urlEncode:(NSString*)string;
 
 @end

@@ -9,13 +9,15 @@
 #import "omediaAppDelegate.h"
 #import "LoginController.h"
 #import "Account.h"
+#import "HttpService.h"
+#import "CoreDataService.h"
+#import "CoreDataException.h"
 
 @implementation omediaAppDelegate
 
 @synthesize window;
 @synthesize accountId;
-
-
+			 
 #pragma mark -
 #pragma mark Application lifecycle
 

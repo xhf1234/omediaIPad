@@ -46,6 +46,26 @@ static NSString* omediaServerUrl = @"localhost:8080";
 	return url;
 }
 
++(NSString*) checkDataVersionUrlWithAccountId:(NSNumber *)accountId withToken:(NSNumber *)token 
+					  withAccountVersion:(NSNumber *)accountVersion {
+	NSString* url = [NSString stringWithFormat:
+					 @"http://%@/omedia/checkDataVersion.do?accountId=%@&token=%@&accountVersion=%@"
+					 ,omediaServerUrl
+					 ,accountId
+					 ,token
+					 ,accountVersion];
+	return url;
+}
+
++(NSString*) getAccountUrlWithAccountId:(NSNumber *)accountId withToken:(NSNumber *)token {
+	NSString* url = [NSString stringWithFormat:
+					 @"http://%@/omedia/getAccount.do?accountId=%@&token=%@"
+					 ,omediaServerUrl
+					 ,accountId
+					 ,token];
+	return url;
+}
+
 +(NSString*) urlEncode:(NSString *)string {
 	NSString *result = (NSString *)
 	CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,

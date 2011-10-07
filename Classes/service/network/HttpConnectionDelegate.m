@@ -15,11 +15,12 @@
 @synthesize receivedData;
 @synthesize callback;
 
--(id) initWithOwnerHttpService:(HttpService*)httpService withCallback:(SEL)cb{
+-(id) initWithOwnerHttpService:(HttpService*)httpService withCallback:(SEL)cb withTarget:(id)aTarget{
 	self = [super init];
 	if(self) {
 		self.ownerHttpService = httpService;
 		callback = cb;
+		target = aTarget;
 		receivedData = [NSMutableData data];
 		[receivedData retain];
 	}
@@ -62,12 +63,12 @@
 	
 }
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-	[ownerHttpService.ownerController httpError];
+	[target performSelector:NSSelectorFromString(@"httpError")];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	NSString* s = [[NSString alloc]initWithData:receivedData encoding:NSUTF8StringEncoding];
-	[ownerHttpService.ownerController performSelector:callback withObject:s];
+	[target performSelector:callback withObject:s];
 	[s autorelease];
 }
 

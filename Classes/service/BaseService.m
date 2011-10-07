@@ -25,4 +25,8 @@
 	return [self.ownerController omediatAppDelegate];
 }
 
+-(void) httpError {
+	[self.ownerController httpError];
+}
+
 @end

@@ -17,6 +17,6 @@
 }
 
 -(id) initWithOwnerController:(BaseController *)controller;
--(void) httpGet:(NSString *)url withTimeout:(double)timeout withCallback:(SEL)callback;
+-(void) httpGet:(NSString *)url withTimeout:(double)timeout withCallback:(SEL)callback withTarget:(id)target;
 
 @end

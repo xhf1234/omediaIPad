@@ -36,6 +36,7 @@
 		FE23BAA4141F733A003C4F5E /* RegisterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAA3141F733A003C4F5E /* RegisterForm.m */; };
 		FE23BAA7141F7391003C4F5E /* BaseFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAA6141F7391003C4F5E /* BaseFormModel.m */; };
 		FE23BAC3141F7CAE003C4F5E /* LoginForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAC2141F7CAE003C4F5E /* LoginForm.m */; };
+		FE45A1D1143F23CC002D35C4 /* SynchronizeDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE45A1D0143F23CC002D35C4 /* SynchronizeDataService.m */; };
 		FE45D473142B56E6004B0097 /* SinaService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE45D472142B56E6004B0097 /* SinaService.m */; };
 		FE4F7605143B17FF00190EA8 /* CoreDataException.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4F7604143B17FF00190EA8 /* CoreDataException.m */; };
 		FE616DC314288E9B00477CB1 /* FormValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE616DC214288E9B00477CB1 /* FormValidator.m */; };
@@ -111,6 +112,8 @@
 		FE23BAC1141F7CAE003C4F5E /* LoginForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginForm.h; path = model/formModel/LoginForm.h; sourceTree = "<group>"; };
 		FE23BAC2141F7CAE003C4F5E /* LoginForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginForm.m; path = model/formModel/LoginForm.m; sourceTree = "<group>"; };
 		FE25819C141FBDD200F890F7 /* ProValidateForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProValidateForm.h; path = model/formModel/ProValidateForm.h; sourceTree = "<group>"; };
+		FE45A1CF143F23CC002D35C4 /* SynchronizeDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SynchronizeDataService.h; path = service/SynchronizeDataService.h; sourceTree = "<group>"; };
+		FE45A1D0143F23CC002D35C4 /* SynchronizeDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SynchronizeDataService.m; path = service/SynchronizeDataService.m; sourceTree = "<group>"; };
 		FE45D471142B56E6004B0097 /* SinaService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SinaService.h; path = service/thirdParty/SinaService.h; sourceTree = "<group>"; };
 		FE45D472142B56E6004B0097 /* SinaService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SinaService.m; path = service/thirdParty/SinaService.m; sourceTree = "<group>"; };
 		FE4F7603143B17FF00190EA8 /* CoreDataException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataException.h; path = exceptions/CoreDataException.h; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				FE23BA85141F6FAC003C4F5E /* AccountService.m */,
 				FE1CAB49141F52D900C022AA /* BaseService.h */,
 				FE1CAB4A141F52D900C022AA /* BaseService.m */,
+				FE45A1CF143F23CC002D35C4 /* SynchronizeDataService.h */,
+				FE45A1D0143F23CC002D35C4 /* SynchronizeDataService.m */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 				FE4F7605143B17FF00190EA8 /* CoreDataException.m in Sources */,
 				FE0D5B1F143B5C00001968B4 /* OmediaException.m in Sources */,
 				FE0A6A80143DFC9600BCA54E /* UrlUtil.m in Sources */,
+				FE45A1D1143F23CC002D35C4 /* SynchronizeDataService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

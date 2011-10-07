@@ -9,7 +9,7 @@
 #import "MainController.h"
 #import "SettingController.h"
 #import "FriendsController.h"
-
+#import "omediaAppDelegate.h"
 
 @implementation MainController
 - (IBAction)actionSettings:(id)sender {
@@ -25,6 +25,7 @@
     [self.navigationController pushViewController:friendsController animated:YES];
 	[friendsController release];
 }
+
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
