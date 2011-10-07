@@ -41,9 +41,12 @@
 
 //http登陆请求的回调函数
 -(void) loginCallback:(NSString*)json {
+	//停止进度条
+	[indicator stopAnimating];
 	//解析http返回的json数据
 	//{"result":1,"token",long} 登陆成功
 	//{"result":2} 密码错误
+	//{"result":4} omedia版本过低
 	//{"result":-1} 服务器错误
 	NSDictionary* jsonObject = [JsonUtil readObject:json];
 	NSNumber* result = [jsonObject valueForKey:@"result"];
@@ -79,8 +82,6 @@
 		[self.syncService synchronizeData];
 		//启动后台间期执行任务的进程
 		[self.syncService startSynchronizeTimer];
-		//停止进度条
-		[indicator stopAnimating];
 		//跳转到主菜单
 		MainController* mainController = [[MainController alloc]init];
 		mainController.navigationItem.title = @"主菜单";
@@ -89,6 +90,8 @@
 		[mainController release];
 	} else if ([result integerValue] == 2) {//密码错误
 		[self showAlert:@"用户名或密码错误" buttonLabel:@"确定"];
+	} else if ([result integerValue] == 4) {//客户端版本过低
+		[self showAlert:@"请升级omedia至最新版本" buttonLabel:@"确定"];
 	} else {//服务器错误
 		[self showAlert:@"服务器错误" buttonLabel:@"确定"];
 	}

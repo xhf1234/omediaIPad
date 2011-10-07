@@ -15,17 +15,22 @@
 
 static NSString* omediaServerUrl = @"localhost:8080";
 
+static NSString* omediaVersion = @"0.1.1";
+
 +(NSString*) registerUrl:(RegisterForm*)form {
-	NSString* url = [NSString stringWithFormat:@"http://%@/omedia/register.do?username=%@&password=%@&email=%@",omediaServerUrl,
-					 [UrlUtil urlEncode:form.username]
+	NSString* url = [NSString stringWithFormat:@"http://%@/omedia/register.do?omediaVersion=%@&username=%@&password=%@&email=%@"
+					 ,omediaServerUrl
+					 ,omediaVersion
+					 ,[UrlUtil urlEncode:form.username]
 					 ,[UrlUtil urlEncode:form.password]
 					 ,[UrlUtil urlEncode:form.email]];
 	return url;
 }
 
 +(NSString*) loginUrl:(LoginForm *)form {
-	NSString* url = [NSString stringWithFormat:@"http://%@/omedia/login.do?username=%@&password=%@"
+	NSString* url = [NSString stringWithFormat:@"http://%@/omedia/login.do?omediaVersion=%@&username=%@&password=%@"
 					 ,omediaServerUrl
+					 ,omediaVersion
 					 ,[UrlUtil urlEncode:form.username]
 					 ,[UrlUtil urlEncode:form.password]];
 	return url;

@@ -54,6 +54,7 @@
 	//解析服务端返回的json数据
 	//{"result":1, "accountId",long} 注册成功
 	//"{result":2} 用户名已经被注册
+	//{"result":4} omedia版本过低
 	//"{result":-1} 服务器错误
 	NSDictionary* jsonObject = [JsonUtil readObject:json];
 	NSNumber* result = [jsonObject valueForKey:@"result"];
@@ -62,6 +63,8 @@
 		[self.navigationController popViewControllerAnimated:YES];
 	} else if ([result integerValue] == 2) {
 		[self showAlert:@"该用户名已被注册" buttonLabel:@"确定"];
+	} else if ([result integerValue] == 4) {//客户端版本过低
+		[self showAlert:@"请升级omedia至最新版本" buttonLabel:@"确定"];
 	} else {
 		[self showAlert:@"服务器错误" buttonLabel:@"确定"];
 	}

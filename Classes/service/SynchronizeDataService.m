@@ -24,7 +24,6 @@ static int timerStarted=0;
 	if (accountId == 0) {
 		return;
 	}
-	NSLog(@"running");
 	CoreDataService* coreDataService = self.ownerController.coreDataService;
 	HttpService* httpService = self.ownerController.httpService;
 	@try {
