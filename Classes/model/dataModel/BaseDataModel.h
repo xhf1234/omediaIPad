@@ -11,13 +11,9 @@
 
 @interface BaseDataModel :  NSManagedObject  
 {
-	NSNumber * version;
 }
 
 @property (nonatomic, retain) NSNumber * version;
-
--(id) init;
--(void) dealloc;
 
 @end
 

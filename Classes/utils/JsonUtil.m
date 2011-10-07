@@ -18,4 +18,11 @@
 	return jsonObject;
 }
 
++ (NSString*) writeObject:(id)object {
+	SBJsonWriter *jsonWriter = [[SBJsonWriter alloc] init];
+	NSString* json = [jsonWriter stringWithObject:object];
+	[jsonWriter release];
+	return json;
+}
+
 @end

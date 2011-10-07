@@ -10,8 +10,11 @@
 #import <CoreData/CoreData.h>
 
 @interface omediaAppDelegate : NSObject <UIApplicationDelegate> {
+	//全局变量,  Service, Controller 可通过[self omediaDelegate].currentAccount  访问
+	
     UIWindow *window;
-	UINavigationController* navController; 
+	UINavigationController* navController;
+	NSNumber* accountId;
 
 @private
     NSManagedObjectContext *managedObjectContext_;
@@ -20,6 +23,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) NSNumber* accountId;
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;

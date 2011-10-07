@@ -12,17 +12,17 @@
 
 @class RegisterForm;
 @class LoginForm;
+@class SettingForm;
 @class BaseController;
 
 @interface AccountService : BaseService {
-	HttpService* httpService;
 }
 
 -(id) initWithOwnerController:(BaseController *)controller;
 -(void) dealloc;
 
 -(void) regester:(RegisterForm*)form;
-
 -(void) login:(LoginForm*)form;
+-(void) setting:(SettingForm*)form;
 
 @end

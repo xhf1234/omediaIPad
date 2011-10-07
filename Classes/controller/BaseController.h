@@ -10,8 +10,23 @@
 
 
 @class omediaAppDelegate;
+
+@class AccountService;
+@class CoreDataService;
+@class HttpService;
+
 @interface BaseController : UIViewController {
+	AccountService* accountService;
+	CoreDataService* coreDataService;
+	HttpService* httpService;
 }
+
+@property(nonatomic, retain) AccountService* accountService;
+@property(nonatomic, retain) CoreDataService* coreDataService;
+@property(nonatomic, retain) HttpService* httpService;
+
+-(void) dealloc;
+-(id) init;
 
 //导航返回
 - (void) back;

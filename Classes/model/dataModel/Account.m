@@ -20,4 +20,27 @@
 @dynamic username;
 @dynamic token;
 
+- (void) awakeFromInsert
+
+{
+	if (self.address == nil) {
+		self.address = @"";
+	}
+	if (self.password == nil) {
+		self.password = @"";
+	}
+	if (self.realName == nil) {
+		self.realName = @"";
+	}
+	if (self.phone == nil) {
+		self.phone = @"";
+	}
+	if (self.email == nil) {
+		self.email = @"";
+	}
+	if (self.username == nil) {
+		self.username= @"";
+	}
+}
+
 @end

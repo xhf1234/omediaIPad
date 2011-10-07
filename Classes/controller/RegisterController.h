@@ -20,13 +20,13 @@
     IBOutlet UIActivityIndicatorView *indicator;
 	
 	RegisterForm* registerForm;
-	
-	AccountService* accountService;
 }
 
 -(void) dealloc;
 -(id) init;
 
 -(IBAction) actionRegister;
+
+-(void) registerCallback:(NSString*)json;
 
 @end

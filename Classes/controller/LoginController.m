@@ -16,6 +16,7 @@
 #import "CoreDataService.h"
 #import "Account.h"
 #import "CoreDataException.h"
+#import "omediaAppDelegate.h"
 
 @implementation LoginController
 
@@ -42,7 +43,7 @@
 	//停止进度条
 	[indicator stopAnimating];
 	//解析http返回的json数据
-	//{"result":1,"token",string} 登陆成功
+	//{"result":1,"token",long} 登陆成功
 	//{"result":2} 密码错误
 	//{"result":-1} 服务器错误
 	NSDictionary* jsonObject = [JsonUtil readObject:json];
@@ -61,6 +62,7 @@
 		//save core data
 		@try {
 			NSNumber* accountId = [jsonObject valueForKey:@"accountId"];
+			[self omediatAppDelegate].accountId = accountId;
 			NSNumber* token = [jsonObject valueForKey:@"token"];
 			Account* account = [coreDataService getAccountWithId:accountId];
 			if (account == nil) {
@@ -70,6 +72,7 @@
 			}
 			account.token = token;
 			[coreDataService saveContext];
+			account = [coreDataService getAccountWithId:accountId];
 		}
 		@catch (CoreDataException * e) {
 			[self showAlert:[e description] buttonLabel:@"确定"];
@@ -99,9 +102,6 @@
 		} else {
 			loginForm.password = @"";
 		}
-
-		accountService = [[AccountService alloc] initWithOwnerController:self];
-		coreDataService = [[CoreDataService alloc] initWithOwnerController:self];
 	}
 	return self;
 }
@@ -114,8 +114,6 @@
 
 -(void) dealloc {
 	[loginForm release];
-	[accountService release];
-	[coreDataService release];
 	[indicator release];
 	[username release];
 	[password release];

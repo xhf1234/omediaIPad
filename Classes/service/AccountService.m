@@ -9,33 +9,49 @@
 #import "AccountService.h"
 #import "RegisterForm.h"
 #import "LoginForm.h"
+#import "SettingForm.h"
 #import "HttpService.h"
+#import "Account.h"
+#import "omediaAppDelegate.h"
+#import "CoreDataService.h"
+#import "UrlUtil.h"
+
 
 @implementation AccountService
+
 
 -(id) initWithOwnerController:(BaseController *)controller {
 	self = [super initWithOwnerController:controller];
 	if(self) {
-		httpService = [[HttpService alloc]initWithOwnerController:controller];
 	}
 	return self;
 }
 
 -(void) dealloc {
-	[httpService release];
 	[super dealloc];
 }
 
 -(void) regester:(RegisterForm *)form {
-	NSString* url = [NSString stringWithFormat:@"http://166.111.137.72:10086/omedia/register.do?username=%@&password=%@&email=%@",form.username,form.password,form.email];
+	HttpService* httpService = [self ownerController].httpService;
+	NSString* url = [UrlUtil registerUrl:form];
 	[httpService httpGet:url
 			 withTimeout:20.0 withCallback:NSSelectorFromString(@"registerCallback:")];
 }
 
 -(void) login:(LoginForm *)form {
-	NSString* url = [NSString stringWithFormat:@"http://166.111.137.72:10086/omedia/login.do?username=%@&password=%@",form.username,form.password];
+	HttpService* httpService = [self ownerController].httpService;
+	NSString* url = [UrlUtil loginUrl:form];
 	[httpService httpGet:url
 			 withTimeout:20.0 withCallback:NSSelectorFromString(@"loginCallback:")];
+}
+
+-(void) setting:(SettingForm *)form {
+	CoreDataService* coreDataService = [self ownerController].coreDataService;
+	HttpService* httpService = [self ownerController].httpService;
+	NSNumber* accountId = [self omediatAppDelegate].accountId;
+	Account* account = [coreDataService getAccountWithId:accountId];
+	NSString* url = [UrlUtil settingUrl:form withAccountId:accountId withToken:account.token];
+	[httpService httpGet:url withTimeout:20.0 withCallback:NSSelectorFromString(@"settingCallback:")];
 }
 
 @end

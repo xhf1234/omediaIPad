@@ -13,17 +13,4 @@
 
 @dynamic version;
 
--(id) init {
-	self = [super init];
-	if(self) {
-		version = [[NSNumber alloc]initWithLong:1L];
-	}
-	return self;
-}
-
--(void) dealloc {
-	[version release];
-	[super dealloc];
-}
-
 @end

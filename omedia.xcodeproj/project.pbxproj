@@ -15,6 +15,7 @@
 		FE0248AD142838D400465F02 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0248AB142838D400465F02 /* SettingController.m */; };
 		FE0248B61428390700465F02 /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0248B51428390700465F02 /* SettingController.xib */; };
 		FE056070142C67B1001FC8E0 /* HttpConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */; };
+		FE0A6A80143DFC9600BCA54E /* UrlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0A6A7F143DFC9600BCA54E /* UrlUtil.m */; };
 		FE0D5B1F143B5C00001968B4 /* OmediaException.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0D5B1E143B5C00001968B4 /* OmediaException.m */; };
 		FE0EA4D614360E3200977733 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0EA4D414360E3200977733 /* MainController.m */; };
 		FE0EA4F314360EAF00977733 /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0EA4F214360EAF00977733 /* MainController.xib */; };
@@ -73,6 +74,8 @@
 		FE0248B51428390700465F02 /* SettingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingController.xib; path = ui/SettingController.xib; sourceTree = "<group>"; };
 		FE05606E142C67B1001FC8E0 /* HttpConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpConnectionDelegate.h; path = service/network/HttpConnectionDelegate.h; sourceTree = "<group>"; };
 		FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpConnectionDelegate.m; path = service/network/HttpConnectionDelegate.m; sourceTree = "<group>"; };
+		FE0A6A7E143DFC9600BCA54E /* UrlUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlUtil.h; sourceTree = "<group>"; };
+		FE0A6A7F143DFC9600BCA54E /* UrlUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlUtil.m; sourceTree = "<group>"; };
 		FE0D5B1D143B5C00001968B4 /* OmediaException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OmediaException.h; path = exceptions/OmediaException.h; sourceTree = "<group>"; };
 		FE0D5B1E143B5C00001968B4 /* OmediaException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OmediaException.m; path = exceptions/OmediaException.m; sourceTree = "<group>"; };
 		FE0EA4D314360E3200977733 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainController.h; path = controller/MainController.h; sourceTree = "<group>"; };
@@ -405,6 +408,8 @@
 			children = (
 				FE83F04514398A2B00117E6E /* JsonUtil.h */,
 				FE83F04614398A2B00117E6E /* JsonUtil.m */,
+				FE0A6A7E143DFC9600BCA54E /* UrlUtil.h */,
+				FE0A6A7F143DFC9600BCA54E /* UrlUtil.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 				FE144774143ACA790002B5A0 /* CoreDataService.m in Sources */,
 				FE4F7605143B17FF00190EA8 /* CoreDataException.m in Sources */,
 				FE0D5B1F143B5C00001968B4 /* OmediaException.m in Sources */,
+				FE0A6A80143DFC9600BCA54E /* UrlUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,10 +8,12 @@
 
 #import "omediaAppDelegate.h"
 #import "LoginController.h"
+#import "Account.h"
 
 @implementation omediaAppDelegate
 
 @synthesize window;
+@synthesize accountId;
 
 
 #pragma mark -
@@ -33,7 +35,6 @@
     
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -183,6 +184,7 @@
     [managedObjectModel_ release];
     [persistentStoreCoordinator_ release];
 	
+	[accountId release];
 	[navController release];
     [window release];
     [super dealloc];

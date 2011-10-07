@@ -8,8 +8,32 @@
 
 #import "BaseController.h"
 #import "omediaAppDelegate.h"
+#import "CoreDataService.h"
+#import "AccountService.h"
+#import "HttpService.h"
 
 @implementation BaseController
+
+@synthesize accountService;
+@synthesize httpService;
+@synthesize coreDataService;
+
+-(void) dealloc {
+	[accountService release];
+	[coreDataService release];
+	[httpService release];
+	[super dealloc];
+}
+
+-(id) init {
+	self = [super init];
+	if(self) {
+		accountService = [[AccountService alloc] initWithOwnerController:self];
+		coreDataService = [[CoreDataService alloc] initWithOwnerController:self];
+		httpService = [[HttpService alloc] initWithOwnerController:self];
+	}
+	return self;
+}
 
 - (void) back {
 	[self.navigationController popViewControllerAnimated:YES];

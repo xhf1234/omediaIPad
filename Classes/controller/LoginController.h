@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "BaseController.h"
 
-@class AccountService;
-@class CoreDataService;
 @class LoginForm;
 
 @interface LoginController : BaseController {
@@ -18,13 +16,13 @@
     IBOutlet UITextField *username;
     IBOutlet UIActivityIndicatorView *indicator;
     IBOutlet UISwitch *rememberPassword;
-	AccountService* accountService;
-	CoreDataService* coreDataService;
 	LoginForm* loginForm;
 }
 
 -(IBAction) actionLogin:(id)sender;
 -(IBAction) actionRegister:(id)sender;
+
+-(void) loginCallback:(NSString*)json;
 
 -(void) dealloc;
 -(id) init;

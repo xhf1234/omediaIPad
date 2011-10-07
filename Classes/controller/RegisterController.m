@@ -36,14 +36,12 @@
 	[password release];
 	[confirmPassword release];
 	[email release];
-	[accountService release];
 	[super dealloc];
 }
 
 -(id) init {
 	self = [super init];
 	if(self) {
-		accountService = [[AccountService alloc]initWithOwnerController:self];
 		registerForm = [[RegisterForm alloc]init];
 	}
 	return self;
