@@ -14,6 +14,7 @@
 @synthesize ownerHttpService;
 @synthesize receivedData;
 @synthesize callback;
+@synthesize target;
 
 -(id) initWithOwnerHttpService:(HttpService*)httpService withCallback:(SEL)cb withTarget:(id)aTarget{
 	self = [super init];

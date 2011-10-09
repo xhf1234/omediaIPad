@@ -15,18 +15,21 @@
 @class CoreDataService;
 @class HttpService;
 @class SynchronizeDataService;
+@class FriendsService;
 
 @interface BaseController : UIViewController {
 	AccountService* accountService;
 	CoreDataService* coreDataService;
 	HttpService* httpService;
 	SynchronizeDataService* syncService;
+	FriendsService* friendService;
 }
 
 @property(nonatomic, retain) AccountService* accountService;
 @property(nonatomic, retain) CoreDataService* coreDataService;
 @property(nonatomic, retain) HttpService* httpService;
 @property(nonatomic, retain) SynchronizeDataService* syncService;
+@property(nonatomic, retain) FriendsService* friendService;
 
 -(void) dealloc;
 -(id) init;

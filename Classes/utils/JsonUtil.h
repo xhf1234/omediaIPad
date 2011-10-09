@@ -14,6 +14,7 @@
 }
 
 + (NSDictionary*) readObject:(NSString*)jsonString;
++ (NSArray*) readArrayObject:(NSString*)jsonString;
 + (NSString*) writeObject:(id)object;
 
 @end

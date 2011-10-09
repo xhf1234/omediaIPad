@@ -18,6 +18,14 @@
 	return jsonObject;
 }
 
+
++ (NSArray*) readArrayObject:(NSString*)jsonString {
+	SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
+	NSArray* jsonObject = [jsonParser objectWithString:jsonString];
+	[jsonParser release];
+	return jsonObject;
+}
+
 + (NSString*) writeObject:(id)object {
 	SBJsonWriter *jsonWriter = [[SBJsonWriter alloc] init];
 	NSString* json = [jsonWriter stringWithObject:object];

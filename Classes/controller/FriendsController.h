@@ -10,7 +10,6 @@
 
 
 @interface FriendsController : UIViewController {
-    IBOutlet UIWebView *webView;
 }
 
 @end

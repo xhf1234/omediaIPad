@@ -24,13 +24,12 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	NSURL* url = [NSURL URLWithString:@"http://arborjs.org/ "];
-	NSURLRequest* request = [NSURLRequest requestWithURL:url];
-	[webView loadRequest:request];
     [super viewDidLoad];
 }
 
-
+-(void)viewWillAppear:(BOOL)animated {
+	self.tabBarController.navigationItem.title = @"我的好友";
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Overriden to allow any orientation.
@@ -54,7 +53,6 @@
 
 
 - (void)dealloc {
-	[webView release];
     [super dealloc];
 }
 

@@ -22,6 +22,7 @@
 +(NSString*) checkDataVersionUrlWithAccountId:(NSNumber *)accountId withToken:(NSNumber *)token 
 					  withAccountVersion:(NSNumber *)accountVersion;
 +(NSString*) getAccountUrlWithAccountId:(NSNumber*)accountId withToken:(NSNumber*)token;
++(NSString*) searchFriendsUrlWithAccountId:(NSNumber*)accountId withToken:(NSNumber*)token withKeyword:(NSString*)keyword;
 
 +(NSString*) urlEncode:(NSString*)string;
 

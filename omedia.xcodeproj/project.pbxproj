@@ -12,6 +12,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		FE005A1414414B00009DE693 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = FE005A1314414B00009DE693 /* Friend.m */; };
 		FE0248AD142838D400465F02 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0248AB142838D400465F02 /* SettingController.m */; };
 		FE0248B61428390700465F02 /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0248B51428390700465F02 /* SettingController.xib */; };
 		FE056070142C67B1001FC8E0 /* HttpConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */; };
@@ -36,6 +37,9 @@
 		FE23BAA4141F733A003C4F5E /* RegisterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAA3141F733A003C4F5E /* RegisterForm.m */; };
 		FE23BAA7141F7391003C4F5E /* BaseFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAA6141F7391003C4F5E /* BaseFormModel.m */; };
 		FE23BAC3141F7CAE003C4F5E /* LoginForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAC2141F7CAE003C4F5E /* LoginForm.m */; };
+		FE416CC01440314A001DE5DF /* SearchFriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE416CBE1440314A001DE5DF /* SearchFriendsController.m */; };
+		FE416CC314403192001DE5DF /* SearchFriendsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE416CC214403192001DE5DF /* SearchFriendsController.xib */; };
+		FE416D1F1440A0ED001DE5DF /* FriendsService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE416D1E1440A0ED001DE5DF /* FriendsService.m */; };
 		FE45A1D1143F23CC002D35C4 /* SynchronizeDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE45A1D0143F23CC002D35C4 /* SynchronizeDataService.m */; };
 		FE45D473142B56E6004B0097 /* SinaService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE45D472142B56E6004B0097 /* SinaService.m */; };
 		FE4F7605143B17FF00190EA8 /* CoreDataException.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4F7604143B17FF00190EA8 /* CoreDataException.m */; };
@@ -70,6 +74,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* omedia_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = omedia_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* omedia-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "omedia-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		FE005A1214414B00009DE693 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Friend.h; path = model/commonsModel/Friend.h; sourceTree = "<group>"; };
+		FE005A1314414B00009DE693 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Friend.m; path = model/commonsModel/Friend.m; sourceTree = "<group>"; };
 		FE0248AA142838D400465F02 /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingController.h; path = controller/SettingController.h; sourceTree = "<group>"; };
 		FE0248AB142838D400465F02 /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingController.m; path = controller/SettingController.m; sourceTree = "<group>"; };
 		FE0248B51428390700465F02 /* SettingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingController.xib; path = ui/SettingController.xib; sourceTree = "<group>"; };
@@ -112,6 +118,11 @@
 		FE23BAC1141F7CAE003C4F5E /* LoginForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginForm.h; path = model/formModel/LoginForm.h; sourceTree = "<group>"; };
 		FE23BAC2141F7CAE003C4F5E /* LoginForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginForm.m; path = model/formModel/LoginForm.m; sourceTree = "<group>"; };
 		FE25819C141FBDD200F890F7 /* ProValidateForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProValidateForm.h; path = model/formModel/ProValidateForm.h; sourceTree = "<group>"; };
+		FE416CBD1440314A001DE5DF /* SearchFriendsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchFriendsController.h; path = controller/SearchFriendsController.h; sourceTree = "<group>"; };
+		FE416CBE1440314A001DE5DF /* SearchFriendsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchFriendsController.m; path = controller/SearchFriendsController.m; sourceTree = "<group>"; };
+		FE416CC214403192001DE5DF /* SearchFriendsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchFriendsController.xib; path = ui/SearchFriendsController.xib; sourceTree = "<group>"; };
+		FE416D1D1440A0ED001DE5DF /* FriendsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendsService.h; path = service/FriendsService.h; sourceTree = "<group>"; };
+		FE416D1E1440A0ED001DE5DF /* FriendsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendsService.m; path = service/FriendsService.m; sourceTree = "<group>"; };
 		FE45A1CF143F23CC002D35C4 /* SynchronizeDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SynchronizeDataService.h; path = service/SynchronizeDataService.h; sourceTree = "<group>"; };
 		FE45A1D0143F23CC002D35C4 /* SynchronizeDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SynchronizeDataService.m; path = service/SynchronizeDataService.m; sourceTree = "<group>"; };
 		FE45D471142B56E6004B0097 /* SinaService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SinaService.h; path = service/thirdParty/SinaService.h; sourceTree = "<group>"; };
@@ -240,9 +251,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE005A1114414ACE009DE693 /* commonsModel */ = {
+			isa = PBXGroup;
+			children = (
+				FE005A1214414B00009DE693 /* Friend.h */,
+				FE005A1314414B00009DE693 /* Friend.m */,
+			);
+			name = commonsModel;
+			sourceTree = "<group>";
+		};
 		FE13CE9C142341E300795A0B /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				FE416CC214403192001DE5DF /* SearchFriendsController.xib */,
 				FE0EA53C143621F600977733 /* FriendsController.xib */,
 				FE13CE9D142341F400795A0B /* RegisterController.xib */,
 				FE0EA4F214360EAF00977733 /* MainController.xib */,
@@ -285,6 +306,8 @@
 				FE1CAB4A141F52D900C022AA /* BaseService.m */,
 				FE45A1CF143F23CC002D35C4 /* SynchronizeDataService.h */,
 				FE45A1D0143F23CC002D35C4 /* SynchronizeDataService.m */,
+				FE416D1D1440A0ED001DE5DF /* FriendsService.h */,
+				FE416D1E1440A0ED001DE5DF /* FriendsService.m */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -304,6 +327,8 @@
 				FE0248AB142838D400465F02 /* SettingController.m */,
 				FE0EA5341436219A00977733 /* FriendsController.h */,
 				FE0EA5351436219A00977733 /* FriendsController.m */,
+				FE416CBD1440314A001DE5DF /* SearchFriendsController.h */,
+				FE416CBE1440314A001DE5DF /* SearchFriendsController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -311,6 +336,7 @@
 		FE1CAB48141F529800C022AA /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FE005A1114414ACE009DE693 /* commonsModel */,
 				FE1CAB50141F532900C022AA /* dataModel */,
 				FE1CAB4F141F531D00C022AA /* formModel */,
 			);
@@ -478,6 +504,7 @@
 				FEC80D1F1430C28200B1A07C /* Root.strings in Resources */,
 				FE0EA4F314360EAF00977733 /* MainController.xib in Resources */,
 				FE0EA53D143621F600977733 /* FriendsController.xib in Resources */,
+				FE416CC314403192001DE5DF /* SearchFriendsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +554,9 @@
 				FE0D5B1F143B5C00001968B4 /* OmediaException.m in Sources */,
 				FE0A6A80143DFC9600BCA54E /* UrlUtil.m in Sources */,
 				FE45A1D1143F23CC002D35C4 /* SynchronizeDataService.m in Sources */,
+				FE416CC01440314A001DE5DF /* SearchFriendsController.m in Sources */,
+				FE416D1F1440A0ED001DE5DF /* FriendsService.m in Sources */,
+				FE005A1414414B00009DE693 /* Friend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

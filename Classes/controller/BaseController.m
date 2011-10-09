@@ -12,6 +12,7 @@
 #import "AccountService.h"
 #import "HttpService.h"
 #import "SynchronizeDataService.h"
+#import "FriendsService.h"
 
 @implementation BaseController
 
@@ -19,12 +20,14 @@
 @synthesize httpService;
 @synthesize coreDataService;
 @synthesize syncService;
+@synthesize friendService;
 
 -(void) dealloc {
 	[syncService release];
 	[accountService release];
 	[coreDataService release];
 	[httpService release];
+	[friendService release];
 	[super dealloc];
 }
 
@@ -35,6 +38,7 @@
 		coreDataService = [[CoreDataService alloc] initWithOwnerController:self];
 		httpService = [[HttpService alloc] initWithOwnerController:self];
 		syncService = [[SynchronizeDataService alloc] initWithOwnerController:self];
+		friendService = [[FriendsService alloc]initWithOwnerController:self];
 	}
 	return self;
 }

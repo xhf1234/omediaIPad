@@ -9,6 +9,7 @@
 #import "MainController.h"
 #import "SettingController.h"
 #import "FriendsController.h"
+#import "SearchFriendsController.h"
 #import "omediaAppDelegate.h"
 
 @implementation MainController
@@ -20,10 +21,16 @@
 }
 
 - (IBAction)actionFriends:(id)sender {
+	UITabBarController* tabController = [[UITabBarController alloc] init];
 	FriendsController* friendsController = [[FriendsController alloc]init];
-	friendsController.navigationItem.title = @"好友";
-    [self.navigationController pushViewController:friendsController animated:YES];
+	SearchFriendsController* searchFriendsController = [[SearchFriendsController alloc]init];
+	tabController.viewControllers = [NSArray arrayWithObjects: friendsController, searchFriendsController ,nil];
+	friendsController.tabBarItem.title = @"我的好友";
+	searchFriendsController.tabBarItem.title = @"搜索好友";
+    [self.navigationController pushViewController:tabController animated:YES];
 	[friendsController release];
+	[searchFriendsController release];
+	[tabController release];
 }
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.

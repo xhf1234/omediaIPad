@@ -71,6 +71,18 @@ static NSString* omediaVersion = @"0.1.1";
 	return url;
 }
 
++(NSString*) searchFriendsUrlWithAccountId:(NSNumber *)accountId 
+								 withToken:(NSNumber *)token 
+							   withKeyword:(NSString *)keyword {
+	NSString* url = [NSString stringWithFormat:
+					 @"http://%@/omedia/searchFriends.do?accountId=%@&token=%@&keyword=%@"
+					 ,omediaServerUrl
+					 ,accountId
+					 ,token
+					 ,[UrlUtil urlEncode:keyword]];
+	return url;
+}
+
 +(NSString*) urlEncode:(NSString *)string {
 	NSString *result = (NSString *)
 	CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,

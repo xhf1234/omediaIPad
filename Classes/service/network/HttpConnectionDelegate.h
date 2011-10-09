@@ -23,7 +23,7 @@
 @property(nonatomic, retain) id target;
 
 -(void)dealloc;
--(id) initWithOwnerHttpService:(HttpService*)httpService withCallback:(SEL)cb;
+-(id) initWithOwnerHttpService:(HttpService*)httpService withCallback:(SEL)cb withTarget:(id)aTarget;
 
 //delegate method for NSURLConnecton
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
