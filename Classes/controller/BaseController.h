@@ -42,6 +42,8 @@
 -(void) showAlert:(NSString*)message buttonLabel:(NSString*)buttonLabel;
 //http请求出错，弹出错误提示框
 -(void) httpError;
+//重新加载界面数据
+-(void) reloadData;
 
 -(omediaAppDelegate*)omediatAppDelegate;
 

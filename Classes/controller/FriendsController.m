@@ -7,9 +7,54 @@
 //
 
 #import "FriendsController.h"
-
+#import "omediaAppDelegate.h"
+#import "Cache.h"
+#import "FriendRequest.h"
+#import "Friend.h"
+#import "EditFriendController.h"
 
 @implementation FriendsController
+
+
+//override
+-(void) reloadData {
+	[super reloadData];
+	[tableView reloadData];
+}
+
+//data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return [[self omediatAppDelegate].friendsCache.dataArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)view cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell* cell = [view dequeueReusableCellWithIdentifier:@"myfriends"];
+	if (cell == nil) {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"myfriends"];
+		cell.detailTextLabel.lineBreakMode=UILineBreakModeWordWrap;
+		cell.detailTextLabel.numberOfLines = 4;
+		cell.detailTextLabel.textAlignment = UITextAlignmentLeft;
+		[cell autorelease];
+	}
+	NSMutableArray* friends = [self omediatAppDelegate].friendsCache.dataArray;
+	Friend* friend = (Friend*)[friends objectAtIndex:indexPath.row];
+	cell.textLabel.text = friend.username;
+	cell.detailTextLabel.text = [NSString stringWithFormat:@"姓名:%@\nemail:%@\n电话%@\n地址:%@"
+								 ,friend.realName, friend.email, friend.phone, friend.address];
+	return cell;
+}
+
+//delegate
+- (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSMutableArray* friends = [self omediatAppDelegate].friendsCache.dataArray;
+	Friend* friend = (Friend*)[friends objectAtIndex:indexPath.row];
+	editFriendController.friendId = friend.accountId;
+	[popoverController presentPopoverFromRect: [tv rectForRowAtIndexPath:indexPath]
+									   inView:self.view
+					 permittedArrowDirections:UIPopoverArrowDirectionAny
+									 animated:YES];
+	return indexPath;
+}
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -28,6 +73,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
 	self.tabBarController.navigationItem.title = @"我的好友";
 }
 
@@ -52,8 +98,21 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
+-(id) init {
+	self = [super init];
+	if(self) {
+		editFriendController = [[EditFriendController alloc]init];
+		popoverController = [[UIPopoverController alloc] initWithContentViewController:editFriendController];
+		popoverController.popoverContentSize = CGSizeMake(300,100);
+		editFriendController.popoverController = popoverController;
+	}
+	return self;
+}
+
+-(void) dealloc {
+	[popoverController release];
+	[editFriendController release];
+	[super dealloc];
 }
 
 

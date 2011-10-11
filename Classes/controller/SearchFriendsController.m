@@ -11,6 +11,8 @@
 #import "JsonUtil.h"
 #import "OmediaException.h"
 #import "Friend.h"
+#import "AddFriendController.h"
+#import "AddFriendForm.h"
 
 @implementation SearchFriendsController
 
@@ -63,11 +65,17 @@
 	self = [super init];
 	if(self) {
 		friends = [[NSMutableArray alloc]initWithCapacity:32];
+		addFriendController = [[AddFriendController alloc]init];
+		popoverController = [[UIPopoverController alloc] initWithContentViewController:addFriendController];
+		popoverController.popoverContentSize = CGSizeMake(500,200);
+		addFriendController.popoverController = popoverController;
 	}
 	return self;
 }
 
 -(void) dealloc {
+	[popoverController release];
+	[addFriendController release];
 	[friends release];
 	[super dealloc];
 }
@@ -94,6 +102,16 @@
 }
 
 //delegate
+- (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	Friend* friend = (Friend*)[friends objectAtIndex:indexPath.row];
+	addFriendController.form.friendId = friend.accountId;
+	addFriendController.form.msg = @"";
+	[popoverController presentPopoverFromRect: [tv rectForRowAtIndexPath:indexPath]
+					inView:self.view
+					permittedArrowDirections:UIPopoverArrowDirectionAny
+					animated:YES];
+	return indexPath;
+}
 
 //override
 -(void) httpError {
@@ -113,6 +131,7 @@
 */
 
 -(void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
 	self.tabBarController.navigationItem.title = @"搜索好友";
 }
 

@@ -13,6 +13,7 @@
 #import "HttpService.h"
 #import "SynchronizeDataService.h"
 #import "FriendsService.h"
+#import "PopupController.h"
 
 @implementation BaseController
 
@@ -68,6 +69,18 @@
 }
 - (omediaAppDelegate*)omediatAppDelegate {
 	return (omediaAppDelegate*)[UIApplication sharedApplication].delegate;
+}
+
+-(void) reloadData {
+	//do nothing
+	//subclass can override this
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	if (![self isKindOfClass:[PopupController class]]) {
+		[self omediatAppDelegate].currentController = self;
+	}
 }
 
 @end

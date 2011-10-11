@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "BaseService.h"
 
+@class AddFriendForm;
+@class FriendRequestReplyForm;
 /**
  *  关于”好友“操作的接口
  *
@@ -18,5 +20,8 @@
 }
 
 -(void) searchFriends:(NSString*)keyword;
+-(void) addFriend:(AddFriendForm*)form;
+-(void) friendRequestReply:(FriendRequestReplyForm*)form;
+-(void) deleteFriend:(NSNumber*)friendId;
 
 @end

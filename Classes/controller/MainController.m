@@ -11,8 +11,21 @@
 #import "FriendsController.h"
 #import "SearchFriendsController.h"
 #import "omediaAppDelegate.h"
+#import "Cache.h"
+#import "FriendRequestController.h"
 
 @implementation MainController
+
+- (IBAction)actionNotification:(id)sender {
+	UITabBarController* tabController = [[UITabBarController alloc] init];
+	FriendRequestController* friendRequestController = [[FriendRequestController alloc]init];
+	tabController.viewControllers = [NSArray arrayWithObjects: friendRequestController ,nil];
+	friendRequestController.tabBarItem.title = @"好友请求";
+    [self.navigationController pushViewController:tabController animated:YES];
+	[friendRequestController release];
+	[tabController release];
+}
+
 - (IBAction)actionSettings:(id)sender {
 	SettingController* settingController = [[SettingController alloc]init];
 	settingController.navigationItem.title = @"设置";
@@ -31,6 +44,19 @@
 	[friendsController release];
 	[searchFriendsController release];
 	[tabController release];
+}
+
+//override
+-(void) reloadData {
+	[super reloadData];
+	NSInteger count = [[self omediatAppDelegate].friendRequestCache.dataArray count];
+	notification.titleLabel.text = [NSString stringWithFormat:@"消息(%d)",count];
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	NSInteger count = [[self omediatAppDelegate].friendRequestCache.dataArray count];
+	notification.titleLabel.text = [NSString stringWithFormat:@"消息(%d)",count];
 }
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.

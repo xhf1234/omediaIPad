@@ -17,12 +17,19 @@
 		FE0248B61428390700465F02 /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0248B51428390700465F02 /* SettingController.xib */; };
 		FE056070142C67B1001FC8E0 /* HttpConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */; };
 		FE0A6A80143DFC9600BCA54E /* UrlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0A6A7F143DFC9600BCA54E /* UrlUtil.m */; };
+		FE0B15AB1443FAB10047537A /* FriendRequestReplyController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0B15A91443FAB10047537A /* FriendRequestReplyController.m */; };
+		FE0B15AE1443FAEA0047537A /* FriendRequestReplyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0B15AD1443FAEA0047537A /* FriendRequestReplyController.xib */; };
+		FE0B15D21443FDD70047537A /* PopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0B15D11443FDD70047537A /* PopupController.m */; };
+		FE0B15FF14440D0C0047537A /* FriendRequestReplyForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0B15FE14440D0C0047537A /* FriendRequestReplyForm.m */; };
 		FE0D5B1F143B5C00001968B4 /* OmediaException.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0D5B1E143B5C00001968B4 /* OmediaException.m */; };
 		FE0EA4D614360E3200977733 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0EA4D414360E3200977733 /* MainController.m */; };
 		FE0EA4F314360EAF00977733 /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0EA4F214360EAF00977733 /* MainController.xib */; };
 		FE0EA5371436219A00977733 /* FriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0EA5351436219A00977733 /* FriendsController.m */; };
 		FE0EA53D143621F600977733 /* FriendsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0EA53C143621F600977733 /* FriendsController.xib */; };
 		FE0EFDC7143070AC0021C7A3 /* SettingForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0EFDC6143070AC0021C7A3 /* SettingForm.m */; };
+		FE127F461442B7AF0036BA68 /* AddFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE127F441442B7AF0036BA68 /* AddFriendController.m */; };
+		FE127FD81442C8E70036BA68 /* AddFriendController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE127FD71442C8E70036BA68 /* AddFriendController.xib */; };
+		FE127FDB1442C95B0036BA68 /* AddFriendForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE127FDA1442C95B0036BA68 /* AddFriendForm.m */; };
 		FE13CE6814233DD000795A0B /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE13CE6614233DD000795A0B /* LoginController.m */; };
 		FE13CEA0142341F400795A0B /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9D142341F400795A0B /* RegisterController.xib */; };
 		FE13CEA1142341F400795A0B /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13CE9E142341F400795A0B /* LoginController.xib */; };
@@ -33,6 +40,10 @@
 		FE1B6F5B1437736800826653 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1B6F5A1437736800826653 /* CoreData.framework */; };
 		FE1CAB4B141F52D900C022AA /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1CAB4A141F52D900C022AA /* BaseService.m */; };
 		FE1CAB4E141F531600C022AA /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1CAB4D141F531600C022AA /* BaseController.m */; };
+		FE1DA6B0144304DC0040FA30 /* FriendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DA6AF144304DC0040FA30 /* FriendRequest.m */; };
+		FE1DA6B314430B760040FA30 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DA6B214430B760040FA30 /* Cache.m */; };
+		FE23A16A14436BBC00E7E267 /* FriendRequestController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23A16814436BBC00E7E267 /* FriendRequestController.m */; };
+		FE23A16E14436C0000E7E267 /* FriendRequestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE23A16D14436C0000E7E267 /* FriendRequestController.xib */; };
 		FE23BA86141F6FAC003C4F5E /* AccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BA85141F6FAC003C4F5E /* AccountService.m */; };
 		FE23BAA4141F733A003C4F5E /* RegisterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAA3141F733A003C4F5E /* RegisterForm.m */; };
 		FE23BAA7141F7391003C4F5E /* BaseFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE23BAA6141F7391003C4F5E /* BaseFormModel.m */; };
@@ -62,6 +73,8 @@
 		FE83F00F1439865E00117E6E /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE83F0031439865E00117E6E /* SBJsonWriter.m */; };
 		FE83F04714398A2B00117E6E /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FE83F04614398A2B00117E6E /* JsonUtil.m */; };
 		FEC80D1F1430C28200B1A07C /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEC80D1E1430C28200B1A07C /* Root.strings */; };
+		FEFFA672144457F100311E33 /* EditFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFFA670144457F100311E33 /* EditFriendController.m */; };
+		FEFFA6751444582300311E33 /* EditFriendController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEFFA6741444582300311E33 /* EditFriendController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +96,13 @@
 		FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpConnectionDelegate.m; path = service/network/HttpConnectionDelegate.m; sourceTree = "<group>"; };
 		FE0A6A7E143DFC9600BCA54E /* UrlUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlUtil.h; sourceTree = "<group>"; };
 		FE0A6A7F143DFC9600BCA54E /* UrlUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlUtil.m; sourceTree = "<group>"; };
+		FE0B15A81443FAB10047537A /* FriendRequestReplyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendRequestReplyController.h; path = controller/FriendRequestReplyController.h; sourceTree = "<group>"; };
+		FE0B15A91443FAB10047537A /* FriendRequestReplyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendRequestReplyController.m; path = controller/FriendRequestReplyController.m; sourceTree = "<group>"; };
+		FE0B15AD1443FAEA0047537A /* FriendRequestReplyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FriendRequestReplyController.xib; path = ui/FriendRequestReplyController.xib; sourceTree = "<group>"; };
+		FE0B15D01443FDD70047537A /* PopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopupController.h; path = controller/PopupController.h; sourceTree = "<group>"; };
+		FE0B15D11443FDD70047537A /* PopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopupController.m; path = controller/PopupController.m; sourceTree = "<group>"; };
+		FE0B15FD14440D0C0047537A /* FriendRequestReplyForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendRequestReplyForm.h; path = model/formModel/FriendRequestReplyForm.h; sourceTree = "<group>"; };
+		FE0B15FE14440D0C0047537A /* FriendRequestReplyForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendRequestReplyForm.m; path = model/formModel/FriendRequestReplyForm.m; sourceTree = "<group>"; };
 		FE0D5B1D143B5C00001968B4 /* OmediaException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OmediaException.h; path = exceptions/OmediaException.h; sourceTree = "<group>"; };
 		FE0D5B1E143B5C00001968B4 /* OmediaException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OmediaException.m; path = exceptions/OmediaException.m; sourceTree = "<group>"; };
 		FE0EA4D314360E3200977733 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainController.h; path = controller/MainController.h; sourceTree = "<group>"; };
@@ -93,6 +113,11 @@
 		FE0EA53C143621F600977733 /* FriendsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FriendsController.xib; path = ui/FriendsController.xib; sourceTree = "<group>"; };
 		FE0EFDC5143070AC0021C7A3 /* SettingForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingForm.h; path = model/formModel/SettingForm.h; sourceTree = "<group>"; };
 		FE0EFDC6143070AC0021C7A3 /* SettingForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingForm.m; path = model/formModel/SettingForm.m; sourceTree = "<group>"; };
+		FE127F431442B7AF0036BA68 /* AddFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendController.h; path = controller/AddFriendController.h; sourceTree = "<group>"; };
+		FE127F441442B7AF0036BA68 /* AddFriendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendController.m; path = controller/AddFriendController.m; sourceTree = "<group>"; };
+		FE127FD71442C8E70036BA68 /* AddFriendController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddFriendController.xib; path = ui/AddFriendController.xib; sourceTree = "<group>"; };
+		FE127FD91442C95B0036BA68 /* AddFriendForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendForm.h; path = model/formModel/AddFriendForm.h; sourceTree = "<group>"; };
+		FE127FDA1442C95B0036BA68 /* AddFriendForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendForm.m; path = model/formModel/AddFriendForm.m; sourceTree = "<group>"; };
 		FE13CE6514233DD000795A0B /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = controller/LoginController.h; sourceTree = "<group>"; };
 		FE13CE6614233DD000795A0B /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = controller/LoginController.m; sourceTree = "<group>"; };
 		FE13CE9D142341F400795A0B /* RegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RegisterController.xib; path = ui/RegisterController.xib; sourceTree = "<group>"; };
@@ -109,6 +134,13 @@
 		FE1CAB4A141F52D900C022AA /* BaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseService.m; path = service/BaseService.m; sourceTree = "<group>"; };
 		FE1CAB4C141F531600C022AA /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseController.h; path = controller/BaseController.h; sourceTree = "<group>"; };
 		FE1CAB4D141F531600C022AA /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseController.m; path = controller/BaseController.m; sourceTree = "<group>"; };
+		FE1DA6AE144304DC0040FA30 /* FriendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendRequest.h; path = model/commonsModel/FriendRequest.h; sourceTree = "<group>"; };
+		FE1DA6AF144304DC0040FA30 /* FriendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendRequest.m; path = model/commonsModel/FriendRequest.m; sourceTree = "<group>"; };
+		FE1DA6B114430B760040FA30 /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cache.h; path = model/commonsModel/Cache.h; sourceTree = "<group>"; };
+		FE1DA6B214430B760040FA30 /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cache.m; path = model/commonsModel/Cache.m; sourceTree = "<group>"; };
+		FE23A16714436BBC00E7E267 /* FriendRequestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendRequestController.h; path = controller/FriendRequestController.h; sourceTree = "<group>"; };
+		FE23A16814436BBC00E7E267 /* FriendRequestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendRequestController.m; path = controller/FriendRequestController.m; sourceTree = "<group>"; };
+		FE23A16D14436C0000E7E267 /* FriendRequestController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FriendRequestController.xib; path = ui/FriendRequestController.xib; sourceTree = "<group>"; };
 		FE23BA84141F6FAC003C4F5E /* AccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountService.h; path = service/AccountService.h; sourceTree = "<group>"; };
 		FE23BA85141F6FAC003C4F5E /* AccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountService.m; path = service/AccountService.m; sourceTree = "<group>"; };
 		FE23BAA2141F733A003C4F5E /* RegisterForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterForm.h; path = model/formModel/RegisterForm.h; sourceTree = "<group>"; };
@@ -167,6 +199,9 @@
 		FE83F04614398A2B00117E6E /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JsonUtil.m; path = utils/JsonUtil.m; sourceTree = "<group>"; };
 		FEC80D1C1430C27900B1A07C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = Resources/Settings.bundle/English.lproj/Root.strings; sourceTree = "<group>"; };
 		FEC80D201430C29100B1A07C /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = Resources/Settings.bundle/zh_CN.lproj/Root.strings; sourceTree = "<group>"; };
+		FEFFA66F144457F100311E33 /* EditFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditFriendController.h; path = controller/EditFriendController.h; sourceTree = "<group>"; };
+		FEFFA670144457F100311E33 /* EditFriendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditFriendController.m; path = controller/EditFriendController.m; sourceTree = "<group>"; };
+		FEFFA6741444582300311E33 /* EditFriendController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EditFriendController.xib; path = ui/EditFriendController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,13 +291,36 @@
 			children = (
 				FE005A1214414B00009DE693 /* Friend.h */,
 				FE005A1314414B00009DE693 /* Friend.m */,
+				FE1DA6AE144304DC0040FA30 /* FriendRequest.h */,
+				FE1DA6AF144304DC0040FA30 /* FriendRequest.m */,
+				FE1DA6B114430B760040FA30 /* Cache.h */,
+				FE1DA6B214430B760040FA30 /* Cache.m */,
 			);
 			name = commonsModel;
+			sourceTree = "<group>";
+		};
+		FE127F3D1442B6E80036BA68 /* friends */ = {
+			isa = PBXGroup;
+			children = (
+				FE0EA5341436219A00977733 /* FriendsController.h */,
+				FE0EA5351436219A00977733 /* FriendsController.m */,
+				FE416CBD1440314A001DE5DF /* SearchFriendsController.h */,
+				FE416CBE1440314A001DE5DF /* SearchFriendsController.m */,
+				FE127F431442B7AF0036BA68 /* AddFriendController.h */,
+				FE127F441442B7AF0036BA68 /* AddFriendController.m */,
+				FEFFA66F144457F100311E33 /* EditFriendController.h */,
+				FEFFA670144457F100311E33 /* EditFriendController.m */,
+			);
+			name = friends;
 			sourceTree = "<group>";
 		};
 		FE13CE9C142341E300795A0B /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				FEFFA6741444582300311E33 /* EditFriendController.xib */,
+				FE0B15AD1443FAEA0047537A /* FriendRequestReplyController.xib */,
+				FE23A16D14436C0000E7E267 /* FriendRequestController.xib */,
+				FE127FD71442C8E70036BA68 /* AddFriendController.xib */,
 				FE416CC214403192001DE5DF /* SearchFriendsController.xib */,
 				FE0EA53C143621F600977733 /* FriendsController.xib */,
 				FE13CE9D142341F400795A0B /* RegisterController.xib */,
@@ -315,6 +373,8 @@
 		FE1CAB47141F528B00C022AA /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FE23A16614436B8900E7E267 /* notification */,
+				FE127F3D1442B6E80036BA68 /* friends */,
 				FE0EA4D314360E3200977733 /* MainController.h */,
 				FE0EA4D414360E3200977733 /* MainController.m */,
 				FE13CEA31423420700795A0B /* RegisterController.m */,
@@ -325,10 +385,8 @@
 				FE13CE6614233DD000795A0B /* LoginController.m */,
 				FE0248AA142838D400465F02 /* SettingController.h */,
 				FE0248AB142838D400465F02 /* SettingController.m */,
-				FE0EA5341436219A00977733 /* FriendsController.h */,
-				FE0EA5351436219A00977733 /* FriendsController.m */,
-				FE416CBD1440314A001DE5DF /* SearchFriendsController.h */,
-				FE416CBE1440314A001DE5DF /* SearchFriendsController.m */,
+				FE0B15D01443FDD70047537A /* PopupController.h */,
+				FE0B15D11443FDD70047537A /* PopupController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -357,6 +415,10 @@
 				FE616DC214288E9B00477CB1 /* FormValidator.m */,
 				FE0EFDC5143070AC0021C7A3 /* SettingForm.h */,
 				FE0EFDC6143070AC0021C7A3 /* SettingForm.m */,
+				FE127FD91442C95B0036BA68 /* AddFriendForm.h */,
+				FE127FDA1442C95B0036BA68 /* AddFriendForm.m */,
+				FE0B15FD14440D0C0047537A /* FriendRequestReplyForm.h */,
+				FE0B15FE14440D0C0047537A /* FriendRequestReplyForm.m */,
 			);
 			name = formModel;
 			sourceTree = "<group>";
@@ -370,6 +432,17 @@
 				FE7A73CA1438966100A1B08F /* BaseDataModel.m */,
 			);
 			name = dataModel;
+			sourceTree = "<group>";
+		};
+		FE23A16614436B8900E7E267 /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				FE23A16714436BBC00E7E267 /* FriendRequestController.h */,
+				FE23A16814436BBC00E7E267 /* FriendRequestController.m */,
+				FE0B15A81443FAB10047537A /* FriendRequestReplyController.h */,
+				FE0B15A91443FAB10047537A /* FriendRequestReplyController.m */,
+			);
+			name = notification;
 			sourceTree = "<group>";
 		};
 		FE45D470142B56A9004B0097 /* thirdParty */ = {
@@ -505,6 +578,10 @@
 				FE0EA4F314360EAF00977733 /* MainController.xib in Resources */,
 				FE0EA53D143621F600977733 /* FriendsController.xib in Resources */,
 				FE416CC314403192001DE5DF /* SearchFriendsController.xib in Resources */,
+				FE127FD81442C8E70036BA68 /* AddFriendController.xib in Resources */,
+				FE23A16E14436C0000E7E267 /* FriendRequestController.xib in Resources */,
+				FE0B15AE1443FAEA0047537A /* FriendRequestReplyController.xib in Resources */,
+				FEFFA6751444582300311E33 /* EditFriendController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +634,15 @@
 				FE416CC01440314A001DE5DF /* SearchFriendsController.m in Sources */,
 				FE416D1F1440A0ED001DE5DF /* FriendsService.m in Sources */,
 				FE005A1414414B00009DE693 /* Friend.m in Sources */,
+				FE127F461442B7AF0036BA68 /* AddFriendController.m in Sources */,
+				FE127FDB1442C95B0036BA68 /* AddFriendForm.m in Sources */,
+				FE1DA6B0144304DC0040FA30 /* FriendRequest.m in Sources */,
+				FE1DA6B314430B760040FA30 /* Cache.m in Sources */,
+				FE23A16A14436BBC00E7E267 /* FriendRequestController.m in Sources */,
+				FE0B15AB1443FAB10047537A /* FriendRequestReplyController.m in Sources */,
+				FE0B15D21443FDD70047537A /* PopupController.m in Sources */,
+				FE0B15FF14440D0C0047537A /* FriendRequestReplyForm.m in Sources */,
+				FEFFA672144457F100311E33 /* EditFriendController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

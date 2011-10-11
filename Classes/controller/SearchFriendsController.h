@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "BaseController.h"
 
+@class AddFriendController;
+
 @interface SearchFriendsController : BaseController {
     IBOutlet UIActivityIndicatorView *indicator;
     IBOutlet UITableView *tableView;
 	NSMutableArray* friends;
+	AddFriendController* addFriendController;
+	UIPopoverController* popoverController;
 }
 
 

@@ -12,11 +12,16 @@
 #import "HttpService.h"
 #import "CoreDataService.h"
 #import "CoreDataException.h"
+#import "Cache.h"
+#import "BaseController.h"
 
 @implementation omediaAppDelegate
 
 @synthesize window;
 @synthesize accountId;
+@synthesize friendRequestCache;
+@synthesize currentController;
+@synthesize friendsCache;
 			 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -24,7 +29,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
 	navController = [[UINavigationController alloc] init];
-	
+	friendRequestCache = [[Cache alloc]init];
+	friendsCache = [[Cache alloc]init];
 	LoginController* loginController = [[LoginController alloc] init];
 	loginController.title = @"登陆";
 
@@ -186,6 +192,8 @@
     [managedObjectModel_ release];
     [persistentStoreCoordinator_ release];
 	
+	[friendsCache release];
+	[friendRequestCache release];
 	[accountId release];
 	[navController release];
     [window release];

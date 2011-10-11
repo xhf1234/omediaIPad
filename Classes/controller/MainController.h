@@ -14,7 +14,10 @@
     IBOutlet UIButton *friends;
     IBOutlet UIButton *settings;
     IBOutlet UIButton *sina;
+    IBOutlet UIButton *notification;
 }
+
 - (IBAction)actionSettings:(id)sender;
 - (IBAction)actionFriends:(id)sender;
+- (IBAction)actionNotification:(id)sender;
 @end

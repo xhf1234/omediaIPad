@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseController.h"
+#import "EditFriendController.h"
 
+@interface FriendsController : BaseController {
+    IBOutlet UITableView *tableView;
+	UIPopoverController* popoverController;
+	EditFriendController *editFriendController;
 
-@interface FriendsController : UIViewController {
 }
-
 @end

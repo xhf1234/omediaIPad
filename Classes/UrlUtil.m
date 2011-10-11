@@ -10,12 +10,13 @@
 #import "RegisterForm.h"
 #import "LoginForm.h"
 #import "SettingForm.h"
+#import "FriendRequestReplyForm.h"
 
 @implementation UrlUtil
 
-static NSString* omediaServerUrl = @"localhost:8080";
+static NSString* omediaServerUrl = @"166.111.137.72:10086";
 
-static NSString* omediaVersion = @"0.1.1";
+static NSString* omediaVersion = @"0.2";
 
 +(NSString*) registerUrl:(RegisterForm*)form {
 	NSString* url = [NSString stringWithFormat:@"http://%@/omedia/register.do?omediaVersion=%@&username=%@&password=%@&email=%@"
@@ -52,13 +53,17 @@ static NSString* omediaVersion = @"0.1.1";
 }
 
 +(NSString*) checkDataVersionUrlWithAccountId:(NSNumber *)accountId withToken:(NSNumber *)token 
-					  withAccountVersion:(NSNumber *)accountVersion {
+						   withAccountVersion:(NSNumber *)accountVersion 
+						   withFriendRequestVersion:(NSNumber*)friendRequestVersion
+						   withFriendsVersion:(NSNumber*)friendsVersion {
 	NSString* url = [NSString stringWithFormat:
-					 @"http://%@/omedia/checkDataVersion.do?accountId=%@&token=%@&accountVersion=%@"
+					 @"http://%@/omedia/checkDataVersion.do?accountId=%@&token=%@&accountVersion=%@&friendRequestVersion=%@&friendsVersion=%@"
 					 ,omediaServerUrl
 					 ,accountId
 					 ,token
-					 ,accountVersion];
+					 ,accountVersion
+					 ,friendRequestVersion
+					 ,friendsVersion];
 	return url;
 }
 
@@ -71,6 +76,16 @@ static NSString* omediaVersion = @"0.1.1";
 	return url;
 }
 
++(NSString*) getFriendRequestUrlWithAccountId:(NSNumber *)accountId withToken:(NSNumber *)token {
+	NSString* url = [NSString stringWithFormat:
+					 @"http://%@/omedia/getFriendRequest.do?accountId=%@&token=%@"
+					 ,omediaServerUrl
+					 ,accountId
+					 ,token];
+	return url;
+}
+
+
 +(NSString*) searchFriendsUrlWithAccountId:(NSNumber *)accountId 
 								 withToken:(NSNumber *)token 
 							   withKeyword:(NSString *)keyword {
@@ -82,6 +97,50 @@ static NSString* omediaVersion = @"0.1.1";
 					 ,[UrlUtil urlEncode:keyword]];
 	return url;
 }
+
++(NSString*) addFriendUrlWithAccountId:(NSNumber*)accountId withToken:(NSNumber*)token 
+						  withFriendId:(NSNumber*) friendId withMsg:(NSString*)msg {
+	NSString* url = [NSString stringWithFormat:
+					 @"http://%@/omedia/addFriend.do?accountId=%@&token=%@&friendId=%@&msg=%@"
+					 ,omediaServerUrl
+					 ,accountId
+					 ,token
+					 ,friendId
+					 ,[UrlUtil urlEncode:msg]];
+	return url;
+}
+
++(NSString*) friendRequestReplyUrlWithAccountId:(NSNumber *)accountId withToken:(NSNumber *)token 
+									   withForm:(FriendRequestReplyForm *)form {
+	NSString* url = [NSString stringWithFormat:
+					 @"http://%@/omedia/friendRequestReply.do?accountId=%@&token=%@&friendId=%@&reply=%d"
+					 ,omediaServerUrl
+					 ,accountId
+					 ,token
+					 ,form.friendId
+					 ,[form.reply intValue]];
+	return url;
+}
+
++(NSString*) getFriendsWithAccountId:(NSNumber *)accountId withToken:(NSNumber *)token {
+	NSString* url = [NSString stringWithFormat:
+					 @"http://%@/omedia/getFriends.do?accountId=%@&token=%@"
+					 ,omediaServerUrl
+					 ,accountId
+					 ,token];
+	return url;
+}
+
++(NSString*) deleteFriendsUrlWithAccountId:(NSNumber *)accountId withToken:(NSNumber *)token withFriendId:(NSNumber *)friendId {
+	NSString* url = [NSString stringWithFormat:
+					 @"http://%@/omedia/deleteFriends.do?accountId=%@&token=%@&friendId=%@"
+					 ,omediaServerUrl
+					 ,accountId
+					 ,token
+					 ,friendId];
+	return url;
+}
+
 
 +(NSString*) urlEncode:(NSString *)string {
 	NSString *result = (NSString *)
