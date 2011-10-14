@@ -14,8 +14,8 @@
 
 @implementation UrlUtil
 
-static NSString* omediaServerUrl = @"localhost:8080";
-//static NSString* omediaServerUrl = @"166.111.137.72:10086";
+//static NSString* omediaServerUrl = @"localhost:8080";
+static NSString* omediaServerUrl = @"166.111.137.72:10086";
 
 static NSString* omediaVersion = @"0.3";
 
