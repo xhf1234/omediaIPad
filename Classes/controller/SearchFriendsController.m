@@ -105,7 +105,7 @@
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	Friend* friend = (Friend*)[friends objectAtIndex:indexPath.row];
 	addFriendController.friend = friend;
-	[popoverController presentPopoverFromRect: [tv rectForRowAtIndexPath:indexPath]
+	[popoverController presentPopoverFromRect: CGRectZero
 					inView:self.view
 					permittedArrowDirections:UIPopoverArrowDirectionAny
 					animated:YES];
