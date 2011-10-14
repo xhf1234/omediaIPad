@@ -34,7 +34,7 @@
 +(NSString*) getFriendsWithAccountId:(NSNumber*)accountId withToken:(NSNumber*)token;
 +(NSString*) deleteFriendsUrlWithAccountId:(NSNumber*)accountId withToken:(NSNumber*)token
 									withFriendId:(NSNumber*)friendId;
-
++(NSString*) socialGraphUrlWithAccountId:(NSNumber*)accountId withToken:(NSNumber*)token;
 
 +(NSString*) urlEncode:(NSString*)string;
 

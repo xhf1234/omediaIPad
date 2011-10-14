@@ -14,9 +14,10 @@
 
 @implementation UrlUtil
 
-static NSString* omediaServerUrl = @"166.111.137.72:10086";
+static NSString* omediaServerUrl = @"localhost:8080";
+//static NSString* omediaServerUrl = @"166.111.137.72:10086";
 
-static NSString* omediaVersion = @"0.2";
+static NSString* omediaVersion = @"0.3";
 
 +(NSString*) registerUrl:(RegisterForm*)form {
 	NSString* url = [NSString stringWithFormat:@"http://%@/omedia/register.do?omediaVersion=%@&username=%@&password=%@&email=%@"
@@ -138,6 +139,15 @@ static NSString* omediaVersion = @"0.2";
 					 ,accountId
 					 ,token
 					 ,friendId];
+	return url;
+}
+
++(NSString*) socialGraphUrlWithAccountId:(NSNumber *)accountId withToken:(NSNumber *)token {
+	NSString* url = [NSString stringWithFormat:
+					 @"http://%@/omedia/socialGraph.do?accountId=%@&token=%@"
+					 ,omediaServerUrl
+					 ,accountId
+					 ,token];
 	return url;
 }
 

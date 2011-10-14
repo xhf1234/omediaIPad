@@ -13,6 +13,7 @@
 #import "omediaAppDelegate.h"
 #import "Cache.h"
 #import "FriendRequestController.h"
+#import "SocialGraphController.h"
 
 @implementation MainController
 
@@ -36,13 +37,16 @@
 - (IBAction)actionFriends:(id)sender {
 	UITabBarController* tabController = [[UITabBarController alloc] init];
 	FriendsController* friendsController = [[FriendsController alloc]init];
+	SocialGraphController* socialGraphController = [[SocialGraphController alloc] init];
 	SearchFriendsController* searchFriendsController = [[SearchFriendsController alloc]init];
-	tabController.viewControllers = [NSArray arrayWithObjects: friendsController, searchFriendsController ,nil];
+	tabController.viewControllers = [NSArray arrayWithObjects: friendsController, searchFriendsController,socialGraphController ,nil];
 	friendsController.tabBarItem.title = @"我的好友";
 	searchFriendsController.tabBarItem.title = @"搜索好友";
+	socialGraphController.tabBarItem.title = @"Social Graph";
     [self.navigationController pushViewController:tabController animated:YES];
 	[friendsController release];
 	[searchFriendsController release];
+	[socialGraphController release];
 	[tabController release];
 }
 

@@ -67,7 +67,7 @@
 		friends = [[NSMutableArray alloc]initWithCapacity:32];
 		addFriendController = [[AddFriendController alloc]init];
 		popoverController = [[UIPopoverController alloc] initWithContentViewController:addFriendController];
-		popoverController.popoverContentSize = CGSizeMake(500,200);
+		popoverController.popoverContentSize = CGSizeMake(600,300);
 		addFriendController.popoverController = popoverController;
 	}
 	return self;
@@ -104,8 +104,7 @@
 //delegate
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	Friend* friend = (Friend*)[friends objectAtIndex:indexPath.row];
-	addFriendController.form.friendId = friend.accountId;
-	addFriendController.form.msg = @"";
+	addFriendController.friend = friend;
 	[popoverController presentPopoverFromRect: [tv rectForRowAtIndexPath:indexPath]
 					inView:self.view
 					permittedArrowDirections:UIPopoverArrowDirectionAny

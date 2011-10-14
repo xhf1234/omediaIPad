@@ -11,14 +11,17 @@
 #import "FriendsService.h"
 #import "OmediaException.h"
 #import "JsonUtil.h"
+#import "Friend.h"
 
 
 @implementation AddFriendController
 
 @synthesize msg;
 @synthesize form;
+@synthesize friend;
 
 - (IBAction)actionAddFriend:(id)sender {
+	form.friendId = friend.accountId;
     form.msg = msg.text;
 	[indicator startAnimating];
 	@try {
@@ -78,11 +81,16 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	label.lineBreakMode=UILineBreakModeWordWrap;
+	label.numberOfLines = 4;
+	label.textAlignment = UITextAlignmentLeft;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	msg.text = form.msg;
+	label.text = [NSString stringWithFormat:@"姓名:%@\nemail:%@\n电话%@\n地址:%@"
+				  ,friend.realName, friend.email, friend.phone, friend.address];
 }
 
 
@@ -116,6 +124,7 @@
 	return self;
 }
 - (void)dealloc {
+	[friend release];
 	[form release];
     [super dealloc];
 }

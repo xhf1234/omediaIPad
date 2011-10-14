@@ -11,15 +11,19 @@
 #import "PopupController.h"
 
 @class AddFriendForm;
+@class Friend;
 
 @interface AddFriendController : PopupController {
     IBOutlet UITextField *msg;
     IBOutlet UIActivityIndicatorView *indicator;
+    IBOutlet UILabel *label;
 	AddFriendForm* form;
+	Friend* friend;
 }
 
 @property(nonatomic, retain) UITextField *msg;
 @property(nonatomic, retain) AddFriendForm* form;
+@property(nonatomic, retain) Friend* friend;
 
 - (id)init;
 - (void) dealloc;

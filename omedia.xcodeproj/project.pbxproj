@@ -16,6 +16,8 @@
 		FE0248AD142838D400465F02 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0248AB142838D400465F02 /* SettingController.m */; };
 		FE0248B61428390700465F02 /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0248B51428390700465F02 /* SettingController.xib */; };
 		FE056070142C67B1001FC8E0 /* HttpConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */; };
+		FE08A1B91448B1660090CEF5 /* FriendDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08A1B71448B1660090CEF5 /* FriendDetailsController.m */; };
+		FE08A1BC1448B1A20090CEF5 /* FriendDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08A1BB1448B1A20090CEF5 /* FriendDetailsController.xib */; };
 		FE0A6A80143DFC9600BCA54E /* UrlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0A6A7F143DFC9600BCA54E /* UrlUtil.m */; };
 		FE0B15AB1443FAB10047537A /* FriendRequestReplyController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0B15A91443FAB10047537A /* FriendRequestReplyController.m */; };
 		FE0B15AE1443FAEA0047537A /* FriendRequestReplyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0B15AD1443FAEA0047537A /* FriendRequestReplyController.xib */; };
@@ -72,6 +74,8 @@
 		FE83F00E1439865E00117E6E /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = FE83F0011439865E00117E6E /* SBJsonUTF8Stream.m */; };
 		FE83F00F1439865E00117E6E /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE83F0031439865E00117E6E /* SBJsonWriter.m */; };
 		FE83F04714398A2B00117E6E /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FE83F04614398A2B00117E6E /* JsonUtil.m */; };
+		FE89178414486E91009B20CF /* SocialGraphController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE89178214486E91009B20CF /* SocialGraphController.m */; };
+		FE89178714486EF5009B20CF /* SocialGraphController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE89178614486EF5009B20CF /* SocialGraphController.xib */; };
 		FEC80D1F1430C28200B1A07C /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEC80D1E1430C28200B1A07C /* Root.strings */; };
 		FEFFA672144457F100311E33 /* EditFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFFA670144457F100311E33 /* EditFriendController.m */; };
 		FEFFA6751444582300311E33 /* EditFriendController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEFFA6741444582300311E33 /* EditFriendController.xib */; };
@@ -94,6 +98,9 @@
 		FE0248B51428390700465F02 /* SettingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingController.xib; path = ui/SettingController.xib; sourceTree = "<group>"; };
 		FE05606E142C67B1001FC8E0 /* HttpConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpConnectionDelegate.h; path = service/network/HttpConnectionDelegate.h; sourceTree = "<group>"; };
 		FE05606F142C67B1001FC8E0 /* HttpConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpConnectionDelegate.m; path = service/network/HttpConnectionDelegate.m; sourceTree = "<group>"; };
+		FE08A1B61448B1660090CEF5 /* FriendDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendDetailsController.h; path = controller/FriendDetailsController.h; sourceTree = "<group>"; };
+		FE08A1B71448B1660090CEF5 /* FriendDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendDetailsController.m; path = controller/FriendDetailsController.m; sourceTree = "<group>"; };
+		FE08A1BB1448B1A20090CEF5 /* FriendDetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FriendDetailsController.xib; path = ui/FriendDetailsController.xib; sourceTree = "<group>"; };
 		FE0A6A7E143DFC9600BCA54E /* UrlUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlUtil.h; sourceTree = "<group>"; };
 		FE0A6A7F143DFC9600BCA54E /* UrlUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlUtil.m; sourceTree = "<group>"; };
 		FE0B15A81443FAB10047537A /* FriendRequestReplyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendRequestReplyController.h; path = controller/FriendRequestReplyController.h; sourceTree = "<group>"; };
@@ -197,6 +204,9 @@
 		FE83F0031439865E00117E6E /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		FE83F04514398A2B00117E6E /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonUtil.h; path = utils/JsonUtil.h; sourceTree = "<group>"; };
 		FE83F04614398A2B00117E6E /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JsonUtil.m; path = utils/JsonUtil.m; sourceTree = "<group>"; };
+		FE89178114486E91009B20CF /* SocialGraphController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialGraphController.h; path = controller/SocialGraphController.h; sourceTree = "<group>"; };
+		FE89178214486E91009B20CF /* SocialGraphController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocialGraphController.m; path = controller/SocialGraphController.m; sourceTree = "<group>"; };
+		FE89178614486EF5009B20CF /* SocialGraphController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SocialGraphController.xib; path = ui/SocialGraphController.xib; sourceTree = "<group>"; };
 		FEC80D1C1430C27900B1A07C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = Resources/Settings.bundle/English.lproj/Root.strings; sourceTree = "<group>"; };
 		FEC80D201430C29100B1A07C /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = Resources/Settings.bundle/zh_CN.lproj/Root.strings; sourceTree = "<group>"; };
 		FEFFA66F144457F100311E33 /* EditFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditFriendController.h; path = controller/EditFriendController.h; sourceTree = "<group>"; };
@@ -310,6 +320,10 @@
 				FE127F441442B7AF0036BA68 /* AddFriendController.m */,
 				FEFFA66F144457F100311E33 /* EditFriendController.h */,
 				FEFFA670144457F100311E33 /* EditFriendController.m */,
+				FE89178114486E91009B20CF /* SocialGraphController.h */,
+				FE89178214486E91009B20CF /* SocialGraphController.m */,
+				FE08A1B61448B1660090CEF5 /* FriendDetailsController.h */,
+				FE08A1B71448B1660090CEF5 /* FriendDetailsController.m */,
 			);
 			name = friends;
 			sourceTree = "<group>";
@@ -317,6 +331,8 @@
 		FE13CE9C142341E300795A0B /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				FE08A1BB1448B1A20090CEF5 /* FriendDetailsController.xib */,
+				FE89178614486EF5009B20CF /* SocialGraphController.xib */,
 				FEFFA6741444582300311E33 /* EditFriendController.xib */,
 				FE0B15AD1443FAEA0047537A /* FriendRequestReplyController.xib */,
 				FE23A16D14436C0000E7E267 /* FriendRequestController.xib */,
@@ -582,6 +598,8 @@
 				FE23A16E14436C0000E7E267 /* FriendRequestController.xib in Resources */,
 				FE0B15AE1443FAEA0047537A /* FriendRequestReplyController.xib in Resources */,
 				FEFFA6751444582300311E33 /* EditFriendController.xib in Resources */,
+				FE89178714486EF5009B20CF /* SocialGraphController.xib in Resources */,
+				FE08A1BC1448B1A20090CEF5 /* FriendDetailsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +661,8 @@
 				FE0B15D21443FDD70047537A /* PopupController.m in Sources */,
 				FE0B15FF14440D0C0047537A /* FriendRequestReplyForm.m in Sources */,
 				FEFFA672144457F100311E33 /* EditFriendController.m in Sources */,
+				FE89178414486E91009B20CF /* SocialGraphController.m in Sources */,
+				FE08A1B91448B1660090CEF5 /* FriendDetailsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
